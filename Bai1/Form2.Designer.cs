@@ -30,13 +30,13 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.txtTaiKhoan = new System.Windows.Forms.TextBox();
-            this.btnDangNhap = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtMatKhau = new System.Windows.Forms.TextBox();
-            this.btnThoat = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.btnSignUp = new System.Windows.Forms.Button();
+            this.btnThoat = new System.Windows.Forms.Button();
+            this.btnDangNhap = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -56,17 +56,6 @@
             this.txtTaiKhoan.Size = new System.Drawing.Size(277, 22);
             this.txtTaiKhoan.TabIndex = 1;
             this.txtTaiKhoan.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // btnDangNhap
-            // 
-            this.btnDangNhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDangNhap.Location = new System.Drawing.Point(77, 283);
-            this.btnDangNhap.Name = "btnDangNhap";
-            this.btnDangNhap.Size = new System.Drawing.Size(180, 78);
-            this.btnDangNhap.TabIndex = 2;
-            this.btnDangNhap.Text = "ĐĂNG NHẬP";
-            this.btnDangNhap.UseVisualStyleBackColor = true;
-            this.btnDangNhap.Click += new System.EventHandler(this.btnDangNhap_Click);
             // 
             // label2
             // 
@@ -96,17 +85,6 @@
             this.txtMatKhau.TabIndex = 5;
             this.txtMatKhau.UseSystemPasswordChar = true;
             // 
-            // btnThoat
-            // 
-            this.btnThoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThoat.Location = new System.Drawing.Point(299, 283);
-            this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(180, 78);
-            this.btnThoat.TabIndex = 6;
-            this.btnThoat.Text = "THOÁT";
-            this.btnThoat.UseVisualStyleBackColor = true;
-            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -128,6 +106,31 @@
             this.btnSignUp.Text = "TẠO TÀI KHOẢN";
             this.btnSignUp.UseVisualStyleBackColor = true;
             this.btnSignUp.Click += new System.EventHandler(this.btnSignUp_Click);
+            // 
+            // btnThoat
+            // 
+            this.btnThoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThoat.Location = new System.Drawing.Point(320, 283);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(216, 78);
+            this.btnThoat.TabIndex = 6;
+            this.btnThoat.Text = "THOÁT";
+            this.btnThoat.UseVisualStyleBackColor = true;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
+            // 
+            // btnDangNhap
+            // 
+            this.btnDangNhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDangNhap.Image = global::Bai1.Properties.Resources.icons8_enter_50;
+            this.btnDangNhap.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDangNhap.Location = new System.Drawing.Point(48, 283);
+            this.btnDangNhap.Name = "btnDangNhap";
+            this.btnDangNhap.Size = new System.Drawing.Size(226, 78);
+            this.btnDangNhap.TabIndex = 2;
+            this.btnDangNhap.Text = "ĐĂNG NHẬP";
+            this.btnDangNhap.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDangNhap.UseVisualStyleBackColor = true;
+            this.btnDangNhap.Click += new System.EventHandler(this.btnDangNhap_Click);
             // 
             // Form2
             // 

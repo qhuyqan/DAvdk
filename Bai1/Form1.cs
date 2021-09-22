@@ -11,6 +11,8 @@ using System.Data.OleDb;
 using System.Data.SqlClient;
 using Emgu.CV;
 using Emgu.CV.Structure;
+using QRCoder;
+using ZXing;
 
 namespace Bai1
 {
@@ -46,11 +48,7 @@ namespace Bai1
             String sql = "";
             OleDbDataReader reader = Program.Database.SelectSQL(sql);
         }    
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }        
+            
         private void Camera_ImageGrabbed(object sender, EventArgs e)
         {
             Mat frame = new Mat();
@@ -63,6 +61,29 @@ namespace Bai1
             Camera = new Capture(1);
             Camera.ImageGrabbed += Camera_ImageGrabbed;
             Camera.Start();
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Camera.Stop();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (picCam.Image != null)
+            {
+                BarcodeReader reader = new BarcodeReader();
+                Result result=reader.Decode((Bitmap)picCam.Image);
+                if (result != null)
+                {
+                    txtMaSanPham.Text = result.ToString();
+                }
+            }
+        }
+
+        private void btnScan_Click(object sender, EventArgs e)
+        {
+            timer1.Start();
         }
     }
 }

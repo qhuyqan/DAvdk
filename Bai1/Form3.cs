@@ -57,27 +57,13 @@ namespace Bai1
             {
                 NhanVien nv = new NhanVien(txtHoten.Text, txtSdt.Text, txtTK.Text, txtMK.Text);
                 if (nv.KiemTra() == true)
-                {
-                    OleDbConnection myConnection = new OleDbConnection();
-                    myConnection.ConnectionString = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\qhuyd\Desktop\csharpp\Bai1\Bai1\bin\Debug\Database1.mdb";
-                    
-                    string ten = txtHoten.Text;
-                    string sodienthoai = txtSdt.Text;
-                    string taikhoan = txtTK.Text;
-                    string matkhau = txtMK.Text;
-                    string sql = "insert into QuanLyNhanVien (Hoten,SoDienThoai,Account,Password) Values(@ten, @sodienthoai, @taikhoan, @matkhau)";
+                {                    
+                    string sql = "insert into QuanLyNhanVien (Hoten,SoDienThoai,Account,Password) Values ('" + txtHoten.Text + "','" + txtSdt.Text + "','" + txtTK.Text + "','" + txtMK.Text + "')";
 
-                    OleDbCommand cmd = new OleDbCommand(sql);
-                    cmd.Connection = myConnection;
-                    myConnection.Open();
-                    cmd.Parameters.Add("@Hoten", OleDbType.VarChar).Value = ten;
-                    cmd.Parameters.Add("@SoDienThoai", OleDbType.VarChar).Value = sodienthoai;
-                    cmd.Parameters.Add("@Account", OleDbType.VarChar).Value = taikhoan;
-                    cmd.Parameters.Add("@Password", OleDbType.VarChar).Value = matkhau;
-                    cmd.ExecuteNonQuery();
+                    OleDbDataReader readerr = Program.Database.SelectSQL(sql);
 
                     MessageBox.Show("Account successfully created!", "Information", MessageBoxButtons.OK);
-                    myConnection.Close();
+                    this.Close();
 
                 }
                 else
