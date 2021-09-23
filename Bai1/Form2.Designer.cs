@@ -43,7 +43,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(7, 42);
+            this.label1.Location = new System.Drawing.Point(12, 40);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(529, 58);
             this.label1.TabIndex = 0;
@@ -63,9 +63,9 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(12, 131);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(128, 29);
+            this.label2.Size = new System.Drawing.Size(105, 29);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Tài Khoản";
+            this.label2.Text = "Account";
             // 
             // label3
             // 
@@ -73,9 +73,9 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(12, 202);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(121, 29);
+            this.label3.Size = new System.Drawing.Size(124, 29);
             this.label3.TabIndex = 4;
-            this.label3.Text = "Mật Khẩu";
+            this.label3.Text = "Password";
             // 
             // txtMatKhau
             // 
@@ -84,6 +84,7 @@
             this.txtMatKhau.Size = new System.Drawing.Size(277, 22);
             this.txtMatKhau.TabIndex = 5;
             this.txtMatKhau.UseSystemPasswordChar = true;
+            this.txtMatKhau.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMatKhau_KeyPress);
             // 
             // label4
             // 
@@ -101,20 +102,20 @@
             this.btnSignUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSignUp.Location = new System.Drawing.Point(77, 431);
             this.btnSignUp.Name = "btnSignUp";
-            this.btnSignUp.Size = new System.Drawing.Size(402, 41);
+            this.btnSignUp.Size = new System.Drawing.Size(420, 41);
             this.btnSignUp.TabIndex = 8;
-            this.btnSignUp.Text = "TẠO TÀI KHOẢN";
+            this.btnSignUp.Text = "Create Account";
             this.btnSignUp.UseVisualStyleBackColor = true;
             this.btnSignUp.Click += new System.EventHandler(this.btnSignUp_Click);
             // 
             // btnThoat
             // 
             this.btnThoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThoat.Location = new System.Drawing.Point(320, 283);
+            this.btnThoat.Location = new System.Drawing.Point(290, 283);
             this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(216, 78);
+            this.btnThoat.Size = new System.Drawing.Size(207, 72);
             this.btnThoat.TabIndex = 6;
-            this.btnThoat.Text = "THOÁT";
+            this.btnThoat.Text = "Sign out";
             this.btnThoat.UseVisualStyleBackColor = true;
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
@@ -123,11 +124,11 @@
             this.btnDangNhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDangNhap.Image = global::Bai1.Properties.Resources.icons8_enter_50;
             this.btnDangNhap.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnDangNhap.Location = new System.Drawing.Point(48, 283);
+            this.btnDangNhap.Location = new System.Drawing.Point(77, 283);
             this.btnDangNhap.Name = "btnDangNhap";
-            this.btnDangNhap.Size = new System.Drawing.Size(226, 78);
+            this.btnDangNhap.Size = new System.Drawing.Size(207, 72);
             this.btnDangNhap.TabIndex = 2;
-            this.btnDangNhap.Text = "ĐĂNG NHẬP";
+            this.btnDangNhap.Text = "Log in";
             this.btnDangNhap.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDangNhap.UseVisualStyleBackColor = true;
             this.btnDangNhap.Click += new System.EventHandler(this.btnDangNhap_Click);

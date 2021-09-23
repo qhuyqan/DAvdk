@@ -8,10 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OleDb;
-using System.Data.SqlClient;
 using Emgu.CV;
 using Emgu.CV.Structure;
-using QRCoder;
 using ZXing;
 
 namespace Bai1
@@ -73,10 +71,11 @@ namespace Bai1
             if (picCam.Image != null)
             {
                 BarcodeReader reader = new BarcodeReader();
-                Result result=reader.Decode((Bitmap)picCam.Image);
+                Result result = reader.Decode((Bitmap)picCam.Image);
                 if (result != null)
                 {
                     txtMaSanPham.Text = result.ToString();
+                    String sql = "select * from DanhSachSanPham where MaSP="+txtMaSanPham.Text+"";
                 }
             }
         }
@@ -84,6 +83,11 @@ namespace Bai1
         private void btnScan_Click(object sender, EventArgs e)
         {
             timer1.Start();
+        }
+
+        private void btnShow_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

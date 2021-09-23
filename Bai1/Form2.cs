@@ -78,5 +78,13 @@ namespace Bai1
             Form3 f3 = new Form3();
             f3.ShowDialog();
         }
+
+        private void txtMatKhau_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((Keys)e.KeyChar == Keys.Enter)
+            {
+                btnDangNhap.PerformClick();
+            }
+        }       
     }
 }
