@@ -75,7 +75,9 @@ namespace Bai1
                 if (result != null)
                 {
                     txtMaSanPham.Text = result.ToString();
-                    String sql = "select * from DanhSachSanPham where MaSP="+txtMaSanPham.Text+"";
+                    DataTable my_data = new DataTable();
+                    String sql = "SELECT * FROM DanhSachSanPham WHERE MaSP=" + txtMaSanPham.Text + "";
+                    my_data.Load(Program.Database.SelectSQL(sql));
                 }
             }
         }

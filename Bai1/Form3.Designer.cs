@@ -47,7 +47,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Open Sans ExtraBold", 25.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(56, 9);
+            this.label1.Location = new System.Drawing.Point(38, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(372, 59);
             this.label1.TabIndex = 0;
@@ -125,10 +125,10 @@
             // 
             // btnDangKy
             // 
-            this.btnDangKy.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDangKy.Location = new System.Drawing.Point(151, 320);
+            this.btnDangKy.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDangKy.Location = new System.Drawing.Point(152, 337);
             this.btnDangKy.Name = "btnDangKy";
-            this.btnDangKy.Size = new System.Drawing.Size(179, 42);
+            this.btnDangKy.Size = new System.Drawing.Size(179, 49);
             this.btnDangKy.TabIndex = 9;
             this.btnDangKy.Text = "Đăng Ký";
             this.btnDangKy.UseVisualStyleBackColor = true;

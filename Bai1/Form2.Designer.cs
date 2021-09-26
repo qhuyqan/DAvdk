@@ -51,7 +51,7 @@
             // 
             // txtTaiKhoan
             // 
-            this.txtTaiKhoan.Location = new System.Drawing.Point(152, 138);
+            this.txtTaiKhoan.Location = new System.Drawing.Point(197, 138);
             this.txtTaiKhoan.Name = "txtTaiKhoan";
             this.txtTaiKhoan.Size = new System.Drawing.Size(277, 22);
             this.txtTaiKhoan.TabIndex = 1;
@@ -61,7 +61,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(12, 131);
+            this.label2.Location = new System.Drawing.Point(31, 131);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(105, 29);
             this.label2.TabIndex = 3;
@@ -71,7 +71,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(12, 202);
+            this.label3.Location = new System.Drawing.Point(31, 202);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(124, 29);
             this.label3.TabIndex = 4;
@@ -79,7 +79,7 @@
             // 
             // txtMatKhau
             // 
-            this.txtMatKhau.Location = new System.Drawing.Point(152, 209);
+            this.txtMatKhau.Location = new System.Drawing.Point(197, 209);
             this.txtMatKhau.Name = "txtMatKhau";
             this.txtMatKhau.Size = new System.Drawing.Size(277, 22);
             this.txtMatKhau.TabIndex = 5;
@@ -90,7 +90,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(12, 384);
+            this.label4.Location = new System.Drawing.Point(31, 385);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(252, 29);
             this.label4.TabIndex = 7;
@@ -111,11 +111,14 @@
             // btnThoat
             // 
             this.btnThoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThoat.Image = global::Bai1.Properties.Resources.icons8_logout_rounded_up_128;
+            this.btnThoat.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnThoat.Location = new System.Drawing.Point(290, 283);
             this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(207, 72);
+            this.btnThoat.Size = new System.Drawing.Size(159, 72);
             this.btnThoat.TabIndex = 6;
-            this.btnThoat.Text = "Sign out";
+            this.btnThoat.Text = "Exit";
+            this.btnThoat.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnThoat.UseVisualStyleBackColor = true;
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
@@ -124,9 +127,9 @@
             this.btnDangNhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDangNhap.Image = global::Bai1.Properties.Resources.icons8_enter_50;
             this.btnDangNhap.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnDangNhap.Location = new System.Drawing.Point(77, 283);
+            this.btnDangNhap.Location = new System.Drawing.Point(125, 283);
             this.btnDangNhap.Name = "btnDangNhap";
-            this.btnDangNhap.Size = new System.Drawing.Size(207, 72);
+            this.btnDangNhap.Size = new System.Drawing.Size(159, 72);
             this.btnDangNhap.TabIndex = 2;
             this.btnDangNhap.Text = "Log in";
             this.btnDangNhap.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;

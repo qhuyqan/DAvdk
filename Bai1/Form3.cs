@@ -57,12 +57,16 @@ namespace Bai1
             {
                 NhanVien nv = new NhanVien(txtHoten.Text, txtSdt.Text, txtTK.Text, txtMK.Text);
                 if (nv.KiemTra() == true)
-                {                    
-                    string sql = "insert into QuanLyNhanVien (Hoten,SoDienThoai,Account,Password) Values ('" + txtHoten.Text + "','" + txtSdt.Text + "','" + txtTK.Text + "','" + txtMK.Text + "')";
+                {
+                    string ten = txtHoten.Text;
+                    string sdt = txtSdt.Text;
+                    string tk = txtTK.Text;
+                    string mk = txtMK.Text;
+                    string sql = "INSERT INTO [QuanLyNhanVien] (Hoten,SoDienThoai,Account,Password) VALUES ("+ten+","+sdt+","+tk+","+mk+")";
 
-                    OleDbDataReader readerr = Program.Database.SelectSQL(sql);
+                    //OleDbDataReader readerr = Program.Database.SelectSQL(sql);
 
-                    MessageBox.Show("Account successfully created!", "Information", MessageBoxButtons.OK);
+                    MessageBox.Show(sql);
                     this.Close();
 
                 }

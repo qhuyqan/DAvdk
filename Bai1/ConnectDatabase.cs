@@ -16,7 +16,7 @@ namespace Bai1
         {
             try
             {
-                myConnection.ConnectionString = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\qhuyd\Desktop\csharpp\Bai1\Bai1\bin\Debug\Database1.mdb";
+                myConnection.ConnectionString = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=Database1.mdb";
                 myConnection.Open();
             }
             catch { }

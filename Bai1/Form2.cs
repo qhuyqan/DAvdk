@@ -35,7 +35,7 @@ namespace Bai1
                 myConnection.Open();
                 string tk = txtTaiKhoan.Text;
                 string mk = txtMatKhau.Text;
-                string sql = "SELECT * FROM TKNhanVien WHERE Account='" + tk + "' and Password='" + mk + "'";
+                string sql = "SELECT * FROM TKNhanVien WHERE TenDangNhap='" + tk + "' and MatKhau='" + mk + "'";
                 OleDbCommand cmd = new OleDbCommand(sql, myConnection);
                 OleDbDataReader dta = cmd.ExecuteReader();
                 if (dta.Read() == true)
