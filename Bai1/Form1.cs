@@ -17,6 +17,27 @@ namespace Bai1
     public partial class Form1 : Form
     {
         Capture Camera;
+        string strCon = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\qhuyd\Desktop\DA\Bai1\Bai1\bin\Debug\Database1.mdb";
+        OleDbConnection sqlCon = null;
+        public void OpenConnection()
+        {
+            if (sqlCon == null)
+            {
+                sqlCon = new OleDbConnection(strCon);
+            }
+            if (sqlCon.State == ConnectionState.Closed)
+            {
+                sqlCon.Open();
+            }
+        }
+        // Close
+        public void CloseConnection()
+        {
+            if (sqlCon.State == ConnectionState.Open && sqlCon != null)
+            {
+                sqlCon.Close();
+            }
+        }
         public Form1()
         {
             InitializeComponent();
@@ -74,9 +95,6 @@ namespace Bai1
                 if (result != null)
                 {
                     txtMaSanPham.Text = result.ToString();
-                    DataTable my_data = new DataTable();
-                    String sql = "SELECT * FROM DanhSachSanPham WHERE MaSP=" + txtMaSanPham.Text + "";
-                    //my_data.Load(Program.Database.SelectSQL(sql));
                 }
             }
         }
@@ -88,7 +106,26 @@ namespace Bai1
 
         private void btnShow_Click(object sender, EventArgs e)
         {
+            OpenConnection();
+            OleDbCommand sqlCmd = new OleDbCommand();
+            sqlCmd.CommandType = CommandType.Text;
+            sqlCmd.CommandText = "SELECT * FROM DanhSachSanPham WHERE IdSanPham = " + txtMaSanPham.Text + "";
+            sqlCmd.Connection = sqlCon;
+            OleDbDataReader reader = sqlCmd.ExecuteReader();
 
+           
+                if (reader.Read() == true)
+                {
+                    string tenSP = reader.GetString(1);
+                    int donGia = reader.GetInt32(2);
+                    double thanhTien = donGia * 0.13573;
+                    // Show lên
+                    txtTenSanPham.Text = tenSP;
+                    txtDonGia.Text = donGia.ToString();
+                    txtThanhTien.Text = thanhTien.ToString();
+                }
+                reader.Close();
+           
         }
 
         private void label7_Click(object sender, EventArgs e)

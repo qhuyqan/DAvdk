@@ -14,6 +14,28 @@ namespace Bai1
 {
     public partial class Form2 : Form
     {
+        string strCon = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=Database1.mdb";
+        OleDbConnection sqlCon = null;
+        // Open
+        public void OpenConnection()
+        {
+            if (sqlCon == null)
+            {
+                sqlCon = new OleDbConnection(strCon);
+            }
+            if (sqlCon.State == ConnectionState.Closed)
+            {
+                sqlCon.Open();
+            }
+        }
+        // Close
+        public void CloseConnection()
+        {
+            if (sqlCon.State == ConnectionState.Open && sqlCon != null)
+            {
+                sqlCon.Close();
+            }
+        }
         public Form2()
         {
             InitializeComponent();
@@ -26,25 +48,23 @@ namespace Bai1
 
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
-            OleDbConnection myConnection = new OleDbConnection();
-            myConnection.ConnectionString = @"Provider=Microsoft.Jet.OLEDB.4.0 ; Data Source=Database1.mdb ;";
-
-            //SqlConnection connection = new SqlConnection(@"Provider=Microsoft.Jet.OLEDB.4.0 ; Data Source=Database1.mdb ;");
             try
             {
-                myConnection.Open();
-                string tk = txtTaiKhoan.Text;
-                string mk = txtMatKhau.Text;
-                string sql = "SELECT * FROM QuanLyNhanVien WHERE Tk='" + tk + "' and Mk='" + mk + "'";
-                OleDbCommand cmd = new OleDbCommand(sql, myConnection);
-                OleDbDataReader dta = cmd.ExecuteReader();
-                if (dta.Read() == true)
+                OpenConnection();
+                OleDbCommand sqlCmd = new OleDbCommand();
+                sqlCmd.CommandType = CommandType.Text;
+                sqlCmd.CommandText = "SELECT * FROM QuanLyNhanVien WHERE Tk='" + txtTaiKhoan.Text + "' and Mk='" + txtMatKhau.Text + "'";
+                sqlCmd.Connection = sqlCon;
+                OleDbDataReader reader = sqlCmd.ExecuteReader();
+
+                if (reader.Read() == true)
                 {
                     MessageBox.Show("LOGIN SUCCESSFUL!");
                     txtTaiKhoan.Text = "";
                     txtMatKhau.Text = "";
                     Form1 f1 = new Form1();
                     f1.ShowDialog();
+                    txtTaiKhoan.Focus();
                 }
                 else
                 {
