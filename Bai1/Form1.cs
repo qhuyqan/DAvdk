@@ -53,6 +53,9 @@ namespace Bai1
             try
             {
                 serialPort1.Open();
+                btnCon.Enabled = false;
+                btnDis.Enabled = true;
+                txtConnected.Text = "Connected";
             }
             catch { }
         }
@@ -60,22 +63,26 @@ namespace Bai1
         private void btnDis_Click(object sender, EventArgs e)
         {
             serialPort1.Close();
+            btnCon.Enabled = true;
+            btnDis.Enabled = false;
+            txtConnected.Text = "Not Connected";
         }
 
         private void btnNhap_Click(object sender, EventArgs e)
         {
 
-        }    
-            
+        }
+
         private void Camera_ImageGrabbed(object sender, EventArgs e)
         {
             Mat frame = new Mat();
             Camera.Retrieve(frame);
             picCam.Image = frame.ToImage<Bgr, byte>().Bitmap;
-            
+
         }
         private void Form1_Load(object sender, EventArgs e)
         {
+            btnDis.Enabled = false;
             Camera = new Capture(1);
             Camera.ImageGrabbed += Camera_ImageGrabbed;
             Camera.Start();
@@ -90,22 +97,13 @@ namespace Bai1
         {
             if (picCam.Image != null)
             {
-                BarcodeReader reader = new BarcodeReader();
-                Result result = reader.Decode((Bitmap)picCam.Image);
+                BarcodeReader readQR = new BarcodeReader();
+                Result result = readQR.Decode((Bitmap)picCam.Image);
                 if (result != null)
                 {
                     txtMaSanPham.Text = result.ToString();
                 }
             }
-        }
-
-        private void btnScan_Click(object sender, EventArgs e)
-        {
-            timer1.Start();
-        }
-
-        private void btnShow_Click(object sender, EventArgs e)
-        {
             OpenConnection();
             OleDbCommand sqlCmd = new OleDbCommand();
             sqlCmd.CommandType = CommandType.Text;
@@ -113,22 +111,28 @@ namespace Bai1
             sqlCmd.Connection = sqlCon;
             OleDbDataReader reader = sqlCmd.ExecuteReader();
 
-           
-                if (reader.Read() == true)
-                {
-                    string tenSP = reader.GetString(1);
-                    int donGia = reader.GetInt32(2);
-                    double thanhTien = donGia * 0.13573;
-                    // Show lên
-                    txtTenSanPham.Text = tenSP;
-                    txtDonGia.Text = donGia.ToString();
-                    txtThanhTien.Text = thanhTien.ToString();
-                }
-                reader.Close();
-           
+
+            if (reader.Read() == true)
+            {
+                string tenSP = reader.GetString(1);
+                int donGia = reader.GetInt32(2);
+                double thanhTien = donGia * 0.13573;
+                // Show lên
+                txtTenSanPham.Text = tenSP;
+                txtDonGia.Text = donGia.ToString();
+                txtThanhTien.Text = thanhTien.ToString();
+            }
+
+            reader.Close();
+            timer1.Stop();
         }
 
-        private void label7_Click(object sender, EventArgs e)
+        private void btnScan_Click(object sender, EventArgs e)
+        {
+            timer1.Start();
+        }      
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
         }

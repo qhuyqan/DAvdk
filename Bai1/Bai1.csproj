@@ -169,6 +169,21 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Image\connect.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Image\disconnect.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Image\connect1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Image\icons8-plus-+-96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Image\scan.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
