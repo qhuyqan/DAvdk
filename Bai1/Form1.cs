@@ -43,8 +43,7 @@ namespace Bai1
 
         private void btnNhap_Click(object sender, EventArgs e)
         {
-            String sql = "";
-            OleDbDataReader reader = Program.Database.SelectSQL(sql);
+
         }    
             
         private void Camera_ImageGrabbed(object sender, EventArgs e)
@@ -77,7 +76,7 @@ namespace Bai1
                     txtMaSanPham.Text = result.ToString();
                     DataTable my_data = new DataTable();
                     String sql = "SELECT * FROM DanhSachSanPham WHERE MaSP=" + txtMaSanPham.Text + "";
-                    my_data.Load(Program.Database.SelectSQL(sql));
+                    //my_data.Load(Program.Database.SelectSQL(sql));
                 }
             }
         }
@@ -88,6 +87,11 @@ namespace Bai1
         }
 
         private void btnShow_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
         {
 
         }

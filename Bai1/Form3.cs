@@ -13,6 +13,28 @@ namespace Bai1
 {
     public partial class Form3 : Form
     {
+        string strCon = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=Database1.mdb";
+        OleDbConnection sqlCon = null;
+        // Open
+        public void OpenConnection()
+        {
+            if (sqlCon == null)
+            {
+                sqlCon = new OleDbConnection(strCon);
+            }
+            if (sqlCon.State == ConnectionState.Closed)
+            {
+                sqlCon.Open();
+            }
+        }
+        // Close
+        public void CloseConnection()
+        {
+            if (sqlCon.State == ConnectionState.Open && sqlCon != null)
+            {
+                sqlCon.Close();
+            }
+        }
         public Form3()
         {
             InitializeComponent();
@@ -58,17 +80,39 @@ namespace Bai1
                 NhanVien nv = new NhanVien(txtHoten.Text, txtSdt.Text, txtTK.Text, txtMK.Text);
                 if (nv.KiemTra() == true)
                 {
-                    string ten = txtHoten.Text;
-                    string sdt = txtSdt.Text;
-                    string tk = txtTK.Text;
-                    string mk = txtMK.Text;
-                    string sql = "INSERT INTO [QuanLyNhanVien] (Hoten,SoDienThoai,Account,Password) VALUES ("+ten+","+sdt+","+tk+","+mk+")";
+                    OpenConnection();
 
-                    //OleDbDataReader readerr = Program.Database.SelectSQL(sql);
+                    OleDbCommand sqlCmd = new OleDbCommand();
+                    sqlCmd.CommandType = CommandType.Text;
+                    sqlCmd.CommandText = "INSERT INTO QuanLyNhanVien(Hoten,SoDienThoai,Tk,Mk) VALUES (@ten,@sdt,@tk,@mk)";
 
-                    MessageBox.Show(sql);
-                    this.Close();
+                    OleDbParameter ten = new OleDbParameter("@ten", OleDbType.BSTR);
+                    ten.Value = txtHoten.Text.Trim();
+                    sqlCmd.Parameters.Add(ten);
 
+                    OleDbParameter sdt = new OleDbParameter("@sdt", OleDbType.Integer);
+                    sdt.Value = int.Parse(txtSdt.Text.Trim());
+                    sqlCmd.Parameters.Add(sdt);
+
+                    OleDbParameter tk = new OleDbParameter("@tk", OleDbType.BSTR);
+                    tk.Value = txtTK.Text.Trim();
+                    sqlCmd.Parameters.Add(tk);
+
+                    OleDbParameter mk = new OleDbParameter("@mk", OleDbType.BSTR);
+                    mk.Value = txtMK.Text.Trim();
+                    sqlCmd.Parameters.Add(mk);
+
+                    sqlCmd.Connection = sqlCon;
+                    int result = sqlCmd.ExecuteNonQuery();
+                    if (result > 0)
+                    {
+                        MessageBox.Show("Successfull");
+                        this.CloseConnection();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Fail");
+                    }                    
                 }
                 else
                 {
