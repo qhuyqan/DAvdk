@@ -16,6 +16,7 @@ namespace Bai1
 {
     public partial class Form1 : Form
     {
+        double tongTien = 0;
         Capture Camera;
         string strCon = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\qhuyd\Desktop\DA\Bai1\Bai1\bin\Debug\Database1.mdb";
         OleDbConnection sqlCon = null;
@@ -72,11 +73,93 @@ namespace Bai1
 
         private void btnNhap_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void Camera_ImageGrabbed(object sender, EventArgs e)
+        {
+            Mat frame = new Mat();
+            Camera.Retrieve(frame);
+            picCam.Image = frame.ToImage<Bgr, byte>().Bitmap;
+
+        }
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            btnDis.Enabled = false;
+
+            Camera = new Capture(1);
+            Camera.ImageGrabbed += Camera_ImageGrabbed;
+            Camera.Start();
+
+            timer2.Start();
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Camera.Stop();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (picCam.Image != null)
+            {
+                BarcodeReader readQR = new BarcodeReader();
+                Result result = readQR.Decode((Bitmap)picCam.Image);
+                if (result != null)
+                {
+                    txtMaSanPham.Text = result.ToString();
+                }
+            }
+            try
+            {
+                OpenConnection();
+                OleDbCommand sqlCmd = new OleDbCommand();
+                sqlCmd.CommandType = CommandType.Text;
+                sqlCmd.CommandText = "SELECT * FROM DanhSachSanPham WHERE IdSanPham = " + txtMaSanPham.Text + "";
+                sqlCmd.Connection = sqlCon;
+                OleDbDataReader reader = sqlCmd.ExecuteReader();
+
+                if (reader.Read() == true)
+                {
+                    string tenSP = reader.GetString(1);
+                    int donGia = reader.GetInt32(2);
+                    double thanhTien = donGia * 0.8311;
+                    // Show lên
+                    txtTenSanPham.Text = tenSP;
+                    txtDonGia.Text = donGia.ToString();
+                    txtThanhTien.Text = thanhTien.ToString();
+                }
+                reader.Close();
+                timer1.Stop();
+            }
+            catch { }
+
+            tongTien = tongTien + double.Parse(txtThanhTien.Text);
+            txtTongTien.Text = tongTien.ToString();
+        }
+
+        private void btnScan_Click(object sender, EventArgs e)
+        {
+            timer1.Start();
+        }
+
+        private void txtTenSanPham_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnNew_Click(object sender, EventArgs e)
+        {
             OpenConnection();
 
             OleDbCommand sqlCmd = new OleDbCommand();
             sqlCmd.CommandType = CommandType.Text;
-            sqlCmd.CommandText = "INSERT INTO SanPhamDaBan(TenKhachHang,MaSP,TenSP,KhoiLuong,DonGia,TongTien,ThoiGian) VALUES (@tenkhachhang,@masp,@tensp,@kg,@dongia,@tongtien,@thoigian)";
+            sqlCmd.CommandText = "INSERT INTO SanPhamDaBan(TenKhachHang,MaSP,TenSP,KhoiLuong,DonGia,ThanhTien,ThoiGian) VALUES (@tenkhachhang,@masp,@tensp,@kg,@dongia,@thanhtien,@thoigian)";
 
             OleDbParameter tenkhachhang = new OleDbParameter("@tenkhachhang", OleDbType.BSTR);
             tenkhachhang.Value = txtKhachHang.Text.Trim();
@@ -98,9 +181,9 @@ namespace Bai1
             dongia.Value = txtDonGia.Text.Trim();
             sqlCmd.Parameters.Add(dongia);
 
-            OleDbParameter tongtien = new OleDbParameter("@tongtien", OleDbType.BSTR);
-            tongtien.Value = txtTongTien.Text.Trim();
-            sqlCmd.Parameters.Add(tongtien);
+            OleDbParameter thanhtien = new OleDbParameter("@thanhtien", OleDbType.BSTR);
+            thanhtien.Value = txtThanhTien.Text.Trim();
+            sqlCmd.Parameters.Add(thanhtien);
 
             OleDbParameter thoigian = new OleDbParameter("@thoigian", OleDbType.BSTR);
             thoigian.Value = lblDate.Text.Trim() + ", " + lblTime.Text.Trim();
@@ -110,8 +193,17 @@ namespace Bai1
             int result = sqlCmd.ExecuteNonQuery();
             if (result > 0)
             {
-                MessageBox.Show("NHẬP THÀNH CÔNG");
+                if (txtKhachHang.Text == "")
+                {
+                    MessageBox.Show("PLEASE ENTER CUSTOMER'S NAME!");
+                    txtKhachHang.Focus(); //Đưa trỏ chuột về lại
+                }
                 this.CloseConnection();
+                txtMaSanPham.Text = "";
+                txtTenSanPham.Text = "";
+                txtKhoiLuong.Text = "";
+                txtDonGia.Text = "";
+                txtThanhTien.Text = "";
             }
             else
             {
@@ -119,78 +211,10 @@ namespace Bai1
             }
         }
 
-        private void Camera_ImageGrabbed(object sender, EventArgs e)
+        private void timer2_Tick(object sender, EventArgs e)
         {
-            Mat frame = new Mat();
-            Camera.Retrieve(frame);
-            picCam.Image = frame.ToImage<Bgr, byte>().Bitmap;
-
-        }
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            btnDis.Enabled = false;
-
-            Camera = new Capture(1);
-            Camera.ImageGrabbed += Camera_ImageGrabbed;
-            Camera.Start();
-
             lblTime.Text = DateTime.Now.ToLongTimeString();
             lblDate.Text = DateTime.Now.ToLongDateString();
-        }
-
-        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Camera.Stop();
-        }
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            if (picCam.Image != null)
-            {
-                BarcodeReader readQR = new BarcodeReader();
-                Result result = readQR.Decode((Bitmap)picCam.Image);
-                if (result != null)
-                {
-                    txtMaSanPham.Text = result.ToString();
-                }
-            }
-
-            OpenConnection();
-            OleDbCommand sqlCmd = new OleDbCommand();
-            sqlCmd.CommandType = CommandType.Text;
-            sqlCmd.CommandText = "SELECT * FROM DanhSachSanPham WHERE IdSanPham = " + txtMaSanPham.Text + "";
-            sqlCmd.Connection = sqlCon;
-            OleDbDataReader reader = sqlCmd.ExecuteReader();
-
-            if (reader.Read() == true)
-            {
-                string tenSP = reader.GetString(1);
-                int donGia = reader.GetInt32(2);
-                double thanhTien = donGia * 0.13573;
-                // Show lên
-                txtTenSanPham.Text = tenSP;
-                txtDonGia.Text = donGia.ToString();
-                txtThanhTien.Text = thanhTien.ToString();
-            }
-
-            reader.Close();
-            timer1.Stop();
-
-        }
-
-        private void btnScan_Click(object sender, EventArgs e)
-        {
-            timer1.Start();
-        }
-
-        private void txtTenSanPham_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

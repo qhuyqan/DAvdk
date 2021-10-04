@@ -60,6 +60,7 @@
             this.picCam = new System.Windows.Forms.PictureBox();
             this.lblTime = new System.Windows.Forms.Label();
             this.lblDate = new System.Windows.Forms.Label();
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picCam)).BeginInit();
@@ -80,7 +81,6 @@
             // 
             // timer1
             // 
-            this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // panel2
@@ -122,6 +122,7 @@
             this.btnNew.TabIndex = 21;
             this.btnNew.Text = "New";
             this.btnNew.UseVisualStyleBackColor = false;
+            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
             // 
             // btnScan
             // 
@@ -197,9 +198,9 @@
             this.label7.Font = new System.Drawing.Font("Montserrat", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(14, 64);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(221, 35);
+            this.label7.Size = new System.Drawing.Size(254, 35);
             this.label7.TabIndex = 19;
-            this.label7.Text = "Tên Khách hàng";
+            this.label7.Text = "Tên Khách hàng (*)";
             // 
             // label8
             // 
@@ -383,7 +384,7 @@
             this.lblTime.Font = new System.Drawing.Font("Montserrat", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTime.Location = new System.Drawing.Point(12, 596);
             this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(72, 32);
+            this.lblTime.Size = new System.Drawing.Size(75, 33);
             this.lblTime.TabIndex = 22;
             this.lblTime.Text = "Time";
             this.lblTime.Click += new System.EventHandler(this.label3_Click);
@@ -394,9 +395,14 @@
             this.lblDate.Font = new System.Drawing.Font("Montserrat", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDate.Location = new System.Drawing.Point(12, 633);
             this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(71, 32);
+            this.lblDate.Size = new System.Drawing.Size(74, 33);
             this.lblDate.TabIndex = 23;
             this.lblDate.Text = "Date";
+            // 
+            // timer2
+            // 
+            this.timer2.Enabled = true;
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
             // Form1
             // 
@@ -459,6 +465,7 @@
         private System.Windows.Forms.TextBox txtConnected;
         private System.Windows.Forms.Label lblTime;
         private System.Windows.Forms.Label lblDate;
+        private System.Windows.Forms.Timer timer2;
     }
 }
 
