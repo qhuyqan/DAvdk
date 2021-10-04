@@ -62,13 +62,14 @@ namespace Bai1
                     MessageBox.Show("LOGIN SUCCESSFUL!");
                     txtTaiKhoan.Text = "";
                     txtMatKhau.Text = "";
-                    Form1 f1 = new Form1();
-                    f1.ShowDialog();
                     txtTaiKhoan.Focus();
+                    Form1 f1 = new Form1();
+                    f1.Show();
+                    this.Hide();
                 }
                 else
                 {
-                    MessageBox.Show("LOGIN ERROR!");
+                    MessageBox.Show("WRONG USERNAME OR PASSWORD!");
                     txtMatKhau.Focus();
                 }
             }
@@ -105,6 +106,11 @@ namespace Bai1
             {
                 btnDangNhap.PerformClick();
             }
+        }
+
+        private void txtMatKhau_TextChanged(object sender, EventArgs e)
+        {
+
         }       
     }
 }
