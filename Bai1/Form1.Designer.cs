@@ -52,7 +52,7 @@
             this.txtTenSanPham = new System.Windows.Forms.TextBox();
             this.txtKhoiLuong = new System.Windows.Forms.TextBox();
             this.txtDonGia = new System.Windows.Forms.TextBox();
-            this.btnNhap = new System.Windows.Forms.Button();
+            this.btnClear = new System.Windows.Forms.Button();
             this.txtThanhTien = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -65,6 +65,11 @@
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picCam)).BeginInit();
             this.SuspendLayout();
+            // 
+            // serialPort1
+            // 
+            this.serialPort1.PortName = "COM3";
+            this.serialPort1.DataReceived += new System.IO.Ports.SerialDataReceivedEventHandler(this.serialPort1_DataReceived);
             // 
             // label1
             // 
@@ -302,16 +307,16 @@
             this.txtDonGia.Size = new System.Drawing.Size(289, 35);
             this.txtDonGia.TabIndex = 28;
             // 
-            // btnNhap
+            // btnClear
             // 
-            this.btnNhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNhap.Location = new System.Drawing.Point(198, 513);
-            this.btnNhap.Name = "btnNhap";
-            this.btnNhap.Size = new System.Drawing.Size(198, 56);
-            this.btnNhap.TabIndex = 16;
-            this.btnNhap.Text = "NHẬP";
-            this.btnNhap.UseVisualStyleBackColor = true;
-            this.btnNhap.Click += new System.EventHandler(this.btnNhap_Click);
+            this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.Location = new System.Drawing.Point(20, 558);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(198, 56);
+            this.btnClear.TabIndex = 16;
+            this.btnClear.Text = "CLEAR";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // txtThanhTien
             // 
@@ -339,7 +344,7 @@
             this.panel1.Controls.Add(this.txtTongTien);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.txtThanhTien);
-            this.panel1.Controls.Add(this.btnNhap);
+            this.panel1.Controls.Add(this.btnClear);
             this.panel1.Controls.Add(this.txtDonGia);
             this.panel1.Controls.Add(this.txtKhoiLuong);
             this.panel1.Controls.Add(this.txtTenSanPham);
@@ -456,7 +461,7 @@
         private System.Windows.Forms.TextBox txtTenSanPham;
         private System.Windows.Forms.TextBox txtKhoiLuong;
         private System.Windows.Forms.TextBox txtDonGia;
-        private System.Windows.Forms.Button btnNhap;
+        private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.TextBox txtThanhTien;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel1;

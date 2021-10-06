@@ -71,9 +71,10 @@ namespace Bai1
             txtConnected.Text = "Not Connected";
         }
 
-        private void btnNhap_Click(object sender, EventArgs e)
+        private void btnClear_Click(object sender, EventArgs e)
         {
-
+            txtKhachHang.Text = "";
+            txtTongTien.Text = "";
         }
 
         private void Camera_ImageGrabbed(object sender, EventArgs e)
@@ -215,6 +216,11 @@ namespace Bai1
         {
             lblTime.Text = DateTime.Now.ToLongTimeString();
             lblDate.Text = DateTime.Now.ToLongDateString();
+        }
+
+        private void serialPort1_DataReceived(object sender, System.IO.Ports.SerialDataReceivedEventArgs e)
+        {
+            
         }
     }
 }
