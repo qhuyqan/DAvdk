@@ -68,7 +68,7 @@
             // 
             // serialPort1
             // 
-            this.serialPort1.PortName = "COM3";
+            this.serialPort1.PortName = "COM4";
             this.serialPort1.DataReceived += new System.IO.Ports.SerialDataReceivedEventHandler(this.serialPort1_DataReceived);
             // 
             // label1
@@ -382,6 +382,7 @@
             this.picCam.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.picCam.TabIndex = 18;
             this.picCam.TabStop = false;
+            this.picCam.Click += new System.EventHandler(this.picCam_Click);
             // 
             // lblTime
             // 

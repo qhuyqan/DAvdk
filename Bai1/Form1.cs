@@ -88,7 +88,7 @@ namespace Bai1
         {
             btnDis.Enabled = false;
 
-            Camera = new Capture(1);
+            Camera = new Capture(0);
             Camera.ImageGrabbed += Camera_ImageGrabbed;
             Camera.Start();
 
@@ -221,6 +221,11 @@ namespace Bai1
         private void serialPort1_DataReceived(object sender, System.IO.Ports.SerialDataReceivedEventArgs e)
         {
             
+        }
+
+        private void picCam_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
