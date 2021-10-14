@@ -60,7 +60,7 @@
             // 
             this.txtTK.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTK.Location = new System.Drawing.Point(241, 206);
-            this.txtTK.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTK.Margin = new System.Windows.Forms.Padding(4);
             this.txtTK.Name = "txtTK";
             this.txtTK.Size = new System.Drawing.Size(293, 32);
             this.txtTK.TabIndex = 1;
@@ -93,7 +93,7 @@
             // 
             this.txtMK.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMK.Location = new System.Drawing.Point(241, 262);
-            this.txtMK.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMK.Margin = new System.Windows.Forms.Padding(4);
             this.txtMK.Name = "txtMK";
             this.txtMK.Size = new System.Drawing.Size(293, 32);
             this.txtMK.TabIndex = 4;
@@ -127,17 +127,18 @@
             // 
             this.txtSdt.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSdt.Location = new System.Drawing.Point(241, 156);
-            this.txtSdt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSdt.Margin = new System.Windows.Forms.Padding(4);
             this.txtSdt.Name = "txtSdt";
             this.txtSdt.Size = new System.Drawing.Size(293, 32);
             this.txtSdt.TabIndex = 7;
+            this.txtSdt.TextChanged += new System.EventHandler(this.txtSdt_TextChanged);
             this.txtSdt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSdt_KeyPress);
             // 
             // txtHoten
             // 
             this.txtHoten.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtHoten.Location = new System.Drawing.Point(241, 96);
-            this.txtHoten.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtHoten.Margin = new System.Windows.Forms.Padding(4);
             this.txtHoten.Name = "txtHoten";
             this.txtHoten.Size = new System.Drawing.Size(293, 32);
             this.txtHoten.TabIndex = 8;
@@ -147,7 +148,7 @@
             this.btnDangKy.BackColor = System.Drawing.Color.Transparent;
             this.btnDangKy.Font = new System.Drawing.Font("Montserrat", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDangKy.Location = new System.Drawing.Point(190, 421);
-            this.btnDangKy.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDangKy.Margin = new System.Windows.Forms.Padding(4);
             this.btnDangKy.Name = "btnDangKy";
             this.btnDangKy.Size = new System.Drawing.Size(224, 61);
             this.btnDangKy.TabIndex = 9;
@@ -159,7 +160,7 @@
             // 
             this.txtXacNhan.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtXacNhan.Location = new System.Drawing.Point(241, 350);
-            this.txtXacNhan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtXacNhan.Margin = new System.Windows.Forms.Padding(4);
             this.txtXacNhan.Name = "txtXacNhan";
             this.txtXacNhan.Size = new System.Drawing.Size(293, 32);
             this.txtXacNhan.TabIndex = 11;
@@ -210,7 +211,7 @@
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form3";
             this.Text = "Form3";
             this.ResumeLayout(false);

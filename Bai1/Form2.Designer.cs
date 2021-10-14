@@ -51,6 +51,7 @@
             this.txtTaiKhoan.Size = new System.Drawing.Size(323, 38);
             this.txtTaiKhoan.TabIndex = 1;
             this.txtTaiKhoan.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.txtTaiKhoan.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTaiKhoan_KeyPress);
             // 
             // txtMatKhau
             // 

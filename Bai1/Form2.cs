@@ -111,6 +111,14 @@ namespace Bai1
         private void txtMatKhau_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtTaiKhoan_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((Keys)e.KeyChar == Keys.Tab)
+            {
+                txtMatKhau.Focus();
+            }
         }       
     }
 }

@@ -17,7 +17,7 @@ namespace Bai1
             matkhau = mk;
         }
         //Kiem tra dinh dang mat khau: >= 6 ki tu ; co ca chu va so
-        public bool KiemTra()
+        public bool KiemTraMatKhau()
         {
             bool CheckLength = false;
             if (matkhau.Length >= 6)

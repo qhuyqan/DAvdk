@@ -78,7 +78,7 @@ namespace Bai1
             else
             {
                 NhanVien nv = new NhanVien(txtHoten.Text, txtSdt.Text, txtTK.Text, txtMK.Text);
-                if (nv.KiemTra() == true)
+                if (nv.KiemTraMatKhau() == true)
                 {
                     OpenConnection();
 
@@ -131,6 +131,11 @@ namespace Bai1
             {
                 e.Handled = true;
             }
+        }
+
+        private void txtSdt_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

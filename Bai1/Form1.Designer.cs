@@ -86,6 +86,7 @@
             // 
             // timer1
             // 
+            this.timer1.Interval = 200;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // panel2
@@ -120,12 +121,12 @@
             this.btnNew.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNew.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)), true);
-            this.btnNew.Location = new System.Drawing.Point(25, 501);
+            this.btnNew.Image = ((System.Drawing.Image)(resources.GetObject("btnNew.Image")));
+            this.btnNew.Location = new System.Drawing.Point(25, 423);
             this.btnNew.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnNew.Name = "btnNew";
-            this.btnNew.Size = new System.Drawing.Size(164, 90);
+            this.btnNew.Size = new System.Drawing.Size(164, 102);
             this.btnNew.TabIndex = 21;
-            this.btnNew.Text = "New";
             this.btnNew.UseVisualStyleBackColor = false;
             this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
             // 
@@ -135,7 +136,7 @@
             this.btnScan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnScan.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)), true);
             this.btnScan.Image = ((System.Drawing.Image)(resources.GetObject("btnScan.Image")));
-            this.btnScan.Location = new System.Drawing.Point(25, 392);
+            this.btnScan.Location = new System.Drawing.Point(25, 308);
             this.btnScan.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnScan.Name = "btnScan";
             this.btnScan.Size = new System.Drawing.Size(164, 90);
