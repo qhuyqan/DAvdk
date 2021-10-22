@@ -88,7 +88,7 @@ namespace Bai1
         {
             btnDis.Enabled = false;
 
-            Camera = new Capture(1);
+            Camera = new Capture(0);
             Camera.ImageGrabbed += Camera_ImageGrabbed;
             Camera.Start();
 
