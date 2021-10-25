@@ -68,7 +68,7 @@
             // 
             // serialPort1
             // 
-            this.serialPort1.PortName = "COM4";
+            this.serialPort1.PortName = "COM5";
             this.serialPort1.DataReceived += new System.IO.Ports.SerialDataReceivedEventHandler(this.serialPort1_DataReceived);
             // 
             // label1
@@ -310,12 +310,12 @@
             // 
             // btnClear
             // 
-            this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.Location = new System.Drawing.Point(20, 558);
+            this.btnClear.Font = new System.Drawing.Font("Montserrat", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.Location = new System.Drawing.Point(20, 535);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(198, 56);
+            this.btnClear.Size = new System.Drawing.Size(198, 79);
             this.btnClear.TabIndex = 16;
-            this.btnClear.Text = "CLEAR";
+            this.btnClear.Text = "DONE";
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
@@ -383,7 +383,6 @@
             this.picCam.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.picCam.TabIndex = 18;
             this.picCam.TabStop = false;
-            this.picCam.Click += new System.EventHandler(this.picCam_Click);
             // 
             // lblTime
             // 

@@ -58,6 +58,8 @@ namespace Bai1
                 serialPort1.Open();
                 btnCon.Enabled = false;
                 btnDis.Enabled = true;
+                btnScan.Enabled = true;
+                btnNew.Enabled = true;
                 txtConnected.Text = "Connected";
             }
             catch { }
@@ -68,6 +70,8 @@ namespace Bai1
             serialPort1.Close();
             btnCon.Enabled = true;
             btnDis.Enabled = false;
+            btnScan.Enabled = false;
+            btnNew.Enabled = false;
             txtConnected.Text = "Not Connected";
         }
 
@@ -87,8 +91,9 @@ namespace Bai1
         private void Form1_Load(object sender, EventArgs e)
         {
             btnDis.Enabled = false;
-
-            Camera = new Capture(0);
+            btnScan.Enabled = false;
+            btnNew.Enabled = false;
+            Camera = new Capture(1);
             Camera.ImageGrabbed += Camera_ImageGrabbed;
             Camera.Start();
 
@@ -102,41 +107,46 @@ namespace Bai1
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if (picCam.Image != null)
+            if (serialPort1.IsOpen)
             {
-                BarcodeReader readQR = new BarcodeReader();
-                Result result = readQR.Decode((Bitmap)picCam.Image);
-                if (result != null)
+                serialPort1.Write("get_weight");
+                if (picCam.Image != null)
                 {
-                    txtMaSanPham.Text = result.ToString();
+                    BarcodeReader readQR = new BarcodeReader();
+                    Result result = readQR.Decode((Bitmap)picCam.Image);
+                    if (result != null)
+                    {
+                        txtMaSanPham.Text = result.ToString();
+                    }
                 }
-            }
-            try
-            {
-                OpenConnection();
-                OleDbCommand sqlCmd = new OleDbCommand();
-                sqlCmd.CommandType = CommandType.Text;
-                sqlCmd.CommandText = "SELECT * FROM DanhSachSanPham WHERE IdSanPham = " + txtMaSanPham.Text + "";
-                sqlCmd.Connection = sqlCon;
-                OleDbDataReader reader = sqlCmd.ExecuteReader();
-
-                if (reader.Read() == true)
-                {                    
-                    string tenSP = reader.GetString(1);
-                    int donGia = reader.GetInt32(2);
-                    double thanhTien = donGia * 0.8311;
-                    // Show lên
-                    txtTenSanPham.Text = tenSP;
-                    txtDonGia.Text = donGia.ToString();
-                    txtThanhTien.Text = thanhTien.ToString();
-                    //serialPort1.Write("1");
+                try
+                {
+                    OpenConnection();
+                    OleDbCommand sqlCmd = new OleDbCommand();
+                    sqlCmd.CommandType = CommandType.Text;
+                    sqlCmd.CommandText = "SELECT * FROM DanhSachSanPham WHERE IdSanPham = " + txtMaSanPham.Text + "";
+                    sqlCmd.Connection = sqlCon;
+                    OleDbDataReader reader = sqlCmd.ExecuteReader();
+                    //serialPort1_DataReceived();
+                    if (reader.Read() == true)
+                    {
+                        string tenSP = reader.GetString(1);
+                        int donGia = reader.GetInt32(2);
+                        float khoiLuong = 1;
+                        double thanhTien = donGia * khoiLuong;
+                        // Show 
+                        txtTenSanPham.Text = tenSP;
+                        txtDonGia.Text = donGia.ToString();
+                        txtKhoiLuong.Text = khoiLuong.ToString() + " kg ";
+                        txtThanhTien.Text = thanhTien.ToString();
+                    }
+                    reader.Close();
+                    timer1.Stop();
+                    tongTien = tongTien + double.Parse(txtThanhTien.Text);
+                    txtTongTien.Text = tongTien.ToString();
                 }
-                reader.Close();
-                timer1.Stop();
-                tongTien = tongTien + double.Parse(txtThanhTien.Text);
-                txtTongTien.Text = tongTien.ToString();
+                catch { }
             }
-            catch { }            
         }
 
         private void btnScan_Click(object sender, EventArgs e)
@@ -156,7 +166,7 @@ namespace Bai1
 
         private void btnNew_Click(object sender, EventArgs e)
         {
-            if (serialPort1.IsOpen)
+            try
             {
                 OpenConnection();
 
@@ -201,18 +211,26 @@ namespace Bai1
                         MessageBox.Show("PLEASE ENTER CUSTOMER'S NAME!");
                         txtKhachHang.Focus(); //Đưa trỏ chuột về lại
                     }
-                    this.CloseConnection();
-                    txtMaSanPham.Text = "";
-                    txtTenSanPham.Text = "";
-                    txtKhoiLuong.Text = "";
-                    txtDonGia.Text = "";
-                    txtThanhTien.Text = "";
+                    else
+                    {
+                        this.CloseConnection();
+                        txtMaSanPham.Text = "";
+                        txtTenSanPham.Text = "";
+                        txtKhoiLuong.Text = "";
+                        txtDonGia.Text = "";
+                        txtThanhTien.Text = "";
+                    }
                 }
                 else
                 {
                     MessageBox.Show("NHẬP KHÔNG THÀNH CÔNG");
                 }
             }
+            catch
+            {
+                MessageBox.Show("chưa quét");
+            }
+
         }
 
         private void timer2_Tick(object sender, EventArgs e)
@@ -223,13 +241,8 @@ namespace Bai1
 
         private void serialPort1_DataReceived(object sender, System.IO.Ports.SerialDataReceivedEventArgs e)
         {
-            string weigh = serialPort1.ReadExisting();
-            Invoke(new MethodInvoker(() => txtKhoiLuong.Text = weigh));
-        }
-
-        private void picCam_Click(object sender, EventArgs e)
-        {
-
+            string weight = serialPort1.ReadExisting();
+            //Invoke(new MethodInvoker(() => txtKhoiLuong.Text = weight));
         }
     }
 }
