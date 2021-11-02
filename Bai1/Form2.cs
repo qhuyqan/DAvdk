@@ -40,12 +40,6 @@ namespace Bai1
         {
             InitializeComponent();
         }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
             try
@@ -81,19 +75,8 @@ namespace Bai1
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            Close();
         }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ptb1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnSignUp_Click(object sender, EventArgs e)
         {
             Form3 f3 = new Form3();
@@ -107,18 +90,53 @@ namespace Bai1
                 btnDangNhap.PerformClick();
             }
         }
-
-        private void txtMatKhau_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void txtTaiKhoan_KeyPress(object sender, KeyPressEventArgs e)
         {
             if ((Keys)e.KeyChar == Keys.Tab)
             {
                 txtMatKhau.Focus();
             }
+        }
+
+        private void txtTaiKhoan_Enter(object sender, EventArgs e)
+        {
+            if (txtTaiKhoan.Text == "Username")
+            {
+                txtTaiKhoan.Text = "";
+                txtTaiKhoan.ForeColor = Color.Black;
+            }
+        }
+
+        private void txtTaiKhoan_Leave(object sender, EventArgs e)
+        {
+            if (txtTaiKhoan.Text == "")
+            {
+                txtTaiKhoan.Text = "Username";
+                txtTaiKhoan.ForeColor = Color.Gray;
+            }
+        }
+
+        private void txtMatKhau_Enter(object sender, EventArgs e)
+        {
+            if (txtMatKhau.Text == "Password")
+            {
+                txtMatKhau.Text = "";
+                txtMatKhau.ForeColor = Color.Black;
+            }
+        }
+
+        private void txtMatKhau_Leave(object sender, EventArgs e)
+        {
+            if (txtMatKhau.Text == "")
+            {
+                txtMatKhau.Text = "Password";
+                txtMatKhau.ForeColor = Color.Gray;
+            }
+        }
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+            
         }       
     }
 }

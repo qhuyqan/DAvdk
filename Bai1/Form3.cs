@@ -39,7 +39,6 @@ namespace Bai1
         {
             InitializeComponent();
         }
-
         private void btnDangKy_Click(object sender, EventArgs e)
         {
             if (txtHoten.Text == "")
@@ -105,9 +104,10 @@ namespace Bai1
                     sqlCmd.Connection = sqlCon;
                     int result = sqlCmd.ExecuteNonQuery();
                     if (result > 0)
-                    {
+                    {                        
                         MessageBox.Show("Successfull");
                         this.CloseConnection();
+                        Close();
                     }
                     else
                     {
@@ -133,9 +133,17 @@ namespace Bai1
             }
         }
 
-        private void txtSdt_TextChanged(object sender, EventArgs e)
+        private void txtHoten_KeyPress(object sender, KeyPressEventArgs e)
         {
-
+            if (char.IsLetter(e.KeyChar) || e.KeyChar == (char)8 || e.KeyChar == (char)32)
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
         }
+
     }
 }

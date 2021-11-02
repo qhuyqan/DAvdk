@@ -50,8 +50,10 @@
             this.txtTaiKhoan.Name = "txtTaiKhoan";
             this.txtTaiKhoan.Size = new System.Drawing.Size(323, 38);
             this.txtTaiKhoan.TabIndex = 1;
-            this.txtTaiKhoan.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.txtTaiKhoan.Text = "Username";
+            this.txtTaiKhoan.Enter += new System.EventHandler(this.txtTaiKhoan_Enter);
             this.txtTaiKhoan.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTaiKhoan_KeyPress);
+            this.txtTaiKhoan.Leave += new System.EventHandler(this.txtTaiKhoan_Leave);
             // 
             // txtMatKhau
             // 
@@ -59,10 +61,12 @@
             this.txtMatKhau.Location = new System.Drawing.Point(211, 270);
             this.txtMatKhau.Name = "txtMatKhau";
             this.txtMatKhau.Size = new System.Drawing.Size(323, 38);
-            this.txtMatKhau.TabIndex = 5;
+            this.txtMatKhau.TabIndex = 2;
+            this.txtMatKhau.Text = "Password";
             this.txtMatKhau.UseSystemPasswordChar = true;
-            this.txtMatKhau.TextChanged += new System.EventHandler(this.txtMatKhau_TextChanged);
+            this.txtMatKhau.Enter += new System.EventHandler(this.txtMatKhau_Enter);
             this.txtMatKhau.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMatKhau_KeyPress);
+            this.txtMatKhau.Leave += new System.EventHandler(this.txtMatKhau_Leave);
             // 
             // btnSignUp
             // 
@@ -85,7 +89,7 @@
             this.btnThoat.Location = new System.Drawing.Point(394, 393);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(155, 55);
-            this.btnThoat.TabIndex = 6;
+            this.btnThoat.TabIndex = 4;
             this.btnThoat.UseVisualStyleBackColor = true;
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
@@ -97,7 +101,7 @@
             this.btnDangNhap.Location = new System.Drawing.Point(152, 393);
             this.btnDangNhap.Name = "btnDangNhap";
             this.btnDangNhap.Size = new System.Drawing.Size(161, 55);
-            this.btnDangNhap.TabIndex = 2;
+            this.btnDangNhap.TabIndex = 3;
             this.btnDangNhap.UseVisualStyleBackColor = true;
             this.btnDangNhap.Click += new System.EventHandler(this.btnDangNhap_Click);
             // 
@@ -161,6 +165,7 @@
             this.Name = "Form2";
             this.Opacity = 0.99D;
             this.Text = "LOG IN";
+            this.Load += new System.EventHandler(this.Form2_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

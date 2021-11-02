@@ -34,7 +34,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
-            this.txtConnected = new System.Windows.Forms.TextBox();
             this.btnNew = new System.Windows.Forms.Button();
             this.btnScan = new System.Windows.Forms.Button();
             this.btnCon = new System.Windows.Forms.Button();
@@ -61,6 +60,7 @@
             this.lblTime = new System.Windows.Forms.Label();
             this.lblDate = new System.Windows.Forms.Label();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.txtIsConnect = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picCam)).BeginInit();
@@ -92,7 +92,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel2.Controls.Add(this.txtConnected);
+            this.panel2.Controls.Add(this.txtIsConnect);
             this.panel2.Controls.Add(this.btnNew);
             this.panel2.Controls.Add(this.btnScan);
             this.panel2.Controls.Add(this.btnCon);
@@ -102,19 +102,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(252, 740);
             this.panel2.TabIndex = 21;
-            // 
-            // txtConnected
-            // 
-            this.txtConnected.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.txtConnected.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtConnected.Font = new System.Drawing.Font("Matura MT Script Capitals", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtConnected.Location = new System.Drawing.Point(11, 59);
-            this.txtConnected.Name = "txtConnected";
-            this.txtConnected.ReadOnly = true;
-            this.txtConnected.Size = new System.Drawing.Size(186, 34);
-            this.txtConnected.TabIndex = 32;
-            this.txtConnected.Text = "Not Connected";
-            this.txtConnected.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btnNew
             // 
@@ -154,7 +141,7 @@
             this.btnCon.Location = new System.Drawing.Point(25, 99);
             this.btnCon.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnCon.Name = "btnCon";
-            this.btnCon.Size = new System.Drawing.Size(164, 90);
+            this.btnCon.Size = new System.Drawing.Size(171, 90);
             this.btnCon.TabIndex = 1;
             this.btnCon.UseVisualStyleBackColor = false;
             this.btnCon.Click += new System.EventHandler(this.btnCon_Click);
@@ -410,6 +397,20 @@
             this.timer2.Enabled = true;
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
+            // txtIsConnect
+            // 
+            this.txtIsConnect.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.txtIsConnect.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtIsConnect.Font = new System.Drawing.Font("Matura MT Script Capitals", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIsConnect.ForeColor = System.Drawing.Color.Red;
+            this.txtIsConnect.Location = new System.Drawing.Point(14, 41);
+            this.txtIsConnect.Name = "txtIsConnect";
+            this.txtIsConnect.ReadOnly = true;
+            this.txtIsConnect.Size = new System.Drawing.Size(193, 34);
+            this.txtIsConnect.TabIndex = 24;
+            this.txtIsConnect.Text = "Not Connected";
+            this.txtIsConnect.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 17F);
@@ -468,10 +469,10 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox txtTongTien;
         private System.Windows.Forms.Button btnNew;
-        private System.Windows.Forms.TextBox txtConnected;
         private System.Windows.Forms.Label lblTime;
         private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.Timer timer2;
+        private System.Windows.Forms.TextBox txtIsConnect;
     }
 }
 

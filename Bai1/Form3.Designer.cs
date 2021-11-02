@@ -63,7 +63,7 @@
             this.txtTK.Margin = new System.Windows.Forms.Padding(4);
             this.txtTK.Name = "txtTK";
             this.txtTK.Size = new System.Drawing.Size(293, 32);
-            this.txtTK.TabIndex = 1;
+            this.txtTK.TabIndex = 3;
             // 
             // label2
             // 
@@ -130,8 +130,7 @@
             this.txtSdt.Margin = new System.Windows.Forms.Padding(4);
             this.txtSdt.Name = "txtSdt";
             this.txtSdt.Size = new System.Drawing.Size(293, 32);
-            this.txtSdt.TabIndex = 7;
-            this.txtSdt.TextChanged += new System.EventHandler(this.txtSdt_TextChanged);
+            this.txtSdt.TabIndex = 2;
             this.txtSdt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSdt_KeyPress);
             // 
             // txtHoten
@@ -141,7 +140,8 @@
             this.txtHoten.Margin = new System.Windows.Forms.Padding(4);
             this.txtHoten.Name = "txtHoten";
             this.txtHoten.Size = new System.Drawing.Size(293, 32);
-            this.txtHoten.TabIndex = 8;
+            this.txtHoten.TabIndex = 1;
+            this.txtHoten.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtHoten_KeyPress);
             // 
             // btnDangKy
             // 
@@ -151,7 +151,7 @@
             this.btnDangKy.Margin = new System.Windows.Forms.Padding(4);
             this.btnDangKy.Name = "btnDangKy";
             this.btnDangKy.Size = new System.Drawing.Size(224, 61);
-            this.btnDangKy.TabIndex = 9;
+            this.btnDangKy.TabIndex = 6;
             this.btnDangKy.Text = "REGISTER";
             this.btnDangKy.UseVisualStyleBackColor = false;
             this.btnDangKy.Click += new System.EventHandler(this.btnDangKy_Click);
@@ -163,7 +163,7 @@
             this.txtXacNhan.Margin = new System.Windows.Forms.Padding(4);
             this.txtXacNhan.Name = "txtXacNhan";
             this.txtXacNhan.Size = new System.Drawing.Size(293, 32);
-            this.txtXacNhan.TabIndex = 11;
+            this.txtXacNhan.TabIndex = 5;
             this.txtXacNhan.UseSystemPasswordChar = true;
             // 
             // label6
