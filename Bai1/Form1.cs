@@ -81,6 +81,7 @@ namespace Bai1
         private void btnClear_Click(object sender, EventArgs e)
         {
             txtKhachHang.Text = "";
+            tongTien = 0;
             txtTongTien.Text = "";
         }
 
@@ -106,12 +107,6 @@ namespace Bai1
 
             timer2.Start();
         }
-
-        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Camera.Stop();
-        }
-
         private void timer1_Tick(object sender, EventArgs e)
         {
             serialPort1.Write("get_weight");
@@ -151,7 +146,7 @@ namespace Bai1
                         string tenSP = reader.GetString(1);
                         int donGia = reader.GetInt32(2);
                         //string khoiLuong = serialPort1.ReadExisting();
-                        double thanhTien = donGia * 0.541;//float.Parse(khoiLuong);
+                        double thanhTien = donGia * 0.6851;//float.Parse(khoiLuong);
                         // Show 
                         txtTenSanPham.Text = tenSP;
                         txtDonGia.Text = donGia.ToString();
@@ -201,45 +196,41 @@ namespace Bai1
                 OleDbCommand sqlCmd = new OleDbCommand();
                 sqlCmd.CommandType = CommandType.Text;
                 sqlCmd.CommandText = "INSERT INTO SanPhamDaBan(TenKhachHang,MaSP,TenSP,KhoiLuong,DonGia,ThanhTien,ThoiGian) VALUES (@tenkhachhang,@masp,@tensp,@kg,@dongia,@thanhtien,@thoigian)";
-
-                OleDbParameter tenkhachhang = new OleDbParameter("@tenkhachhang", OleDbType.BSTR);
-                tenkhachhang.Value = txtKhachHang.Text.Trim();
-                sqlCmd.Parameters.Add(tenkhachhang);
-
-                OleDbParameter masp = new OleDbParameter("@masp", OleDbType.Integer);
-                masp.Value = int.Parse(txtMaSanPham.Text.Trim());
-                sqlCmd.Parameters.Add(masp);
-
-                OleDbParameter tensp = new OleDbParameter("@tensp", OleDbType.BSTR);
-                tensp.Value = txtTenSanPham.Text.Trim();
-                sqlCmd.Parameters.Add(tensp);
-
-                OleDbParameter kg = new OleDbParameter("@kg", OleDbType.BSTR);
-                kg.Value = txtKhoiLuong.Text.Trim();
-                sqlCmd.Parameters.Add(kg);
-
-                OleDbParameter dongia = new OleDbParameter("@dongia", OleDbType.BSTR);
-                dongia.Value = txtDonGia.Text.Trim();
-                sqlCmd.Parameters.Add(dongia);
-
-                OleDbParameter thanhtien = new OleDbParameter("@thanhtien", OleDbType.BSTR);
-                thanhtien.Value = txtThanhTien.Text.Trim();
-                sqlCmd.Parameters.Add(thanhtien);
-
-                OleDbParameter thoigian = new OleDbParameter("@thoigian", OleDbType.BSTR);
-                thoigian.Value = lblDate.Text.Trim() + ", " + lblTime.Text.Trim();
-                sqlCmd.Parameters.Add(thoigian);
-
-                sqlCmd.Connection = sqlCon;
-                int result = sqlCmd.ExecuteNonQuery();
-                if (result > 0)
+                if (txtKhachHang.Text != "")
                 {
-                    if (txtKhachHang.Text == "")
-                    {
-                        MessageBox.Show("PLEASE ENTER CUSTOMER'S NAME!");
-                        txtKhachHang.Focus(); //Đưa trỏ chuột về lại
-                    }
-                    else
+                    OleDbParameter tenkhachhang = new OleDbParameter("@tenkhachhang", OleDbType.BSTR);
+                    tenkhachhang.Value = txtKhachHang.Text.Trim();
+                    sqlCmd.Parameters.Add(tenkhachhang);
+
+                    OleDbParameter masp = new OleDbParameter("@masp", OleDbType.Integer);
+                    masp.Value = int.Parse(txtMaSanPham.Text.Trim());
+                    sqlCmd.Parameters.Add(masp);
+
+                    OleDbParameter tensp = new OleDbParameter("@tensp", OleDbType.BSTR);
+                    tensp.Value = txtTenSanPham.Text.Trim();
+                    sqlCmd.Parameters.Add(tensp);
+
+                    OleDbParameter kg = new OleDbParameter("@kg", OleDbType.BSTR);
+                    kg.Value = txtKhoiLuong.Text.Trim();
+                    sqlCmd.Parameters.Add(kg);
+
+                    OleDbParameter dongia = new OleDbParameter("@dongia", OleDbType.BSTR);
+                    dongia.Value = txtDonGia.Text.Trim();
+                    sqlCmd.Parameters.Add(dongia);
+
+                    OleDbParameter thanhtien = new OleDbParameter("@thanhtien", OleDbType.BSTR);
+                    thanhtien.Value = txtThanhTien.Text.Trim();
+                    sqlCmd.Parameters.Add(thanhtien);
+
+                    OleDbParameter thoigian = new OleDbParameter("@thoigian", OleDbType.BSTR);
+                    thoigian.Value = lblDate.Text.Trim() + " " + lblTime.Text.Trim();
+                    sqlCmd.Parameters.Add(thoigian);
+
+
+                    sqlCmd.Connection = sqlCon;
+                    int result = sqlCmd.ExecuteNonQuery();
+
+                    if (result > 0)
                     {
                         this.CloseConnection();
                         txtMaSanPham.Text = "";
@@ -248,10 +239,14 @@ namespace Bai1
                         txtDonGia.Text = "";
                         txtThanhTien.Text = "";
                     }
+                    else
+                    {
+                        MessageBox.Show("NHẬP KHÔNG THÀNH CÔNG");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("NHẬP KHÔNG THÀNH CÔNG");
+                    MessageBox.Show("PLEASE ENTER CUSTOMER'S NAME");
                 }
             }
             catch
@@ -263,14 +258,20 @@ namespace Bai1
 
         private void timer2_Tick(object sender, EventArgs e)
         {
-            lblTime.Text = DateTime.Now.ToLongTimeString();
-            lblDate.Text = DateTime.Now.ToLongDateString();
+            lblTime.Text = DateTime.Now.ToShortTimeString();
+            lblDate.Text = DateTime.Now.ToShortDateString();
         }
 
         private void serialPort1_DataReceived(object sender, System.IO.Ports.SerialDataReceivedEventArgs e)
         {
             string weight = serialPort1.ReadExisting();
             Invoke(new MethodInvoker(() => txtKhoiLuong.Text = weight));
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            Form4 f4 = new Form4();
+            f4.ShowDialog();
         }
     }
 }

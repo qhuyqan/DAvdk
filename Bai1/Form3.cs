@@ -106,7 +106,7 @@ namespace Bai1
                     if (result > 0)
                     {                        
                         MessageBox.Show("Successfull");
-                        this.CloseConnection();
+                        CloseConnection();
                         Close();
                     }
                     else

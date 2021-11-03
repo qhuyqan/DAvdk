@@ -34,6 +34,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
+            this.txtIsConnect = new System.Windows.Forms.TextBox();
             this.btnNew = new System.Windows.Forms.Button();
             this.btnScan = new System.Windows.Forms.Button();
             this.btnCon = new System.Windows.Forms.Button();
@@ -55,15 +56,30 @@
             this.txtThanhTien = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnPrint = new System.Windows.Forms.Button();
             this.txtTongTien = new System.Windows.Forms.TextBox();
             this.picCam = new System.Windows.Forms.PictureBox();
             this.lblTime = new System.Windows.Forms.Label();
             this.lblDate = new System.Windows.Forms.Label();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
-            this.txtIsConnect = new System.Windows.Forms.TextBox();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picCam)).BeginInit();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // serialPort1
@@ -77,7 +93,7 @@
             this.label1.BackColor = System.Drawing.Color.LightBlue;
             this.label1.Font = new System.Drawing.Font("Consolas", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.label1.Location = new System.Drawing.Point(142, 9);
+            this.label1.Location = new System.Drawing.Point(138, 3);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(916, 59);
@@ -98,10 +114,24 @@
             this.panel2.Controls.Add(this.btnCon);
             this.panel2.Controls.Add(this.btnEsc);
             this.panel2.Controls.Add(this.btnDis);
-            this.panel2.Location = new System.Drawing.Point(1005, -16);
+            this.panel2.Location = new System.Drawing.Point(1000, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(252, 740);
+            this.panel2.Size = new System.Drawing.Size(252, 688);
             this.panel2.TabIndex = 21;
+            // 
+            // txtIsConnect
+            // 
+            this.txtIsConnect.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.txtIsConnect.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtIsConnect.Font = new System.Drawing.Font("Matura MT Script Capitals", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIsConnect.ForeColor = System.Drawing.Color.Red;
+            this.txtIsConnect.Location = new System.Drawing.Point(16, 41);
+            this.txtIsConnect.Name = "txtIsConnect";
+            this.txtIsConnect.ReadOnly = true;
+            this.txtIsConnect.Size = new System.Drawing.Size(193, 34);
+            this.txtIsConnect.TabIndex = 24;
+            this.txtIsConnect.Text = "Not Connected";
+            this.txtIsConnect.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btnNew
             // 
@@ -152,7 +182,7 @@
             this.btnEsc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEsc.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)), true);
             this.btnEsc.Image = ((System.Drawing.Image)(resources.GetObject("btnEsc.Image")));
-            this.btnEsc.Location = new System.Drawing.Point(54, 640);
+            this.btnEsc.Location = new System.Drawing.Point(56, 567);
             this.btnEsc.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnEsc.Name = "btnEsc";
             this.btnEsc.Size = new System.Drawing.Size(115, 73);
@@ -298,7 +328,7 @@
             // btnClear
             // 
             this.btnClear.Font = new System.Drawing.Font("Montserrat", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.Location = new System.Drawing.Point(20, 535);
+            this.btnClear.Location = new System.Drawing.Point(20, 522);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(198, 79);
             this.btnClear.TabIndex = 16;
@@ -329,6 +359,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.panel1.Controls.Add(this.btnPrint);
             this.panel1.Controls.Add(this.txtTongTien);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.txtThanhTien);
@@ -345,10 +376,21 @@
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label6);
-            this.panel1.Location = new System.Drawing.Point(400, 83);
+            this.panel1.Location = new System.Drawing.Point(403, 65);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(609, 641);
+            this.panel1.Size = new System.Drawing.Size(605, 633);
             this.panel1.TabIndex = 17;
+            // 
+            // btnPrint
+            // 
+            this.btnPrint.Font = new System.Drawing.Font("Montserrat", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrint.Location = new System.Drawing.Point(267, 522);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(198, 79);
+            this.btnPrint.TabIndex = 32;
+            this.btnPrint.Text = "PRINT INVOICE";
+            this.btnPrint.UseVisualStyleBackColor = true;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // txtTongTien
             // 
@@ -364,7 +406,7 @@
             // 
             this.picCam.BackColor = System.Drawing.SystemColors.Desktop;
             this.picCam.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.picCam.Location = new System.Drawing.Point(-2, 83);
+            this.picCam.Location = new System.Drawing.Point(-4, 65);
             this.picCam.Name = "picCam";
             this.picCam.Size = new System.Drawing.Size(410, 335);
             this.picCam.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -375,7 +417,7 @@
             // 
             this.lblTime.AutoSize = true;
             this.lblTime.Font = new System.Drawing.Font("Montserrat", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTime.Location = new System.Drawing.Point(12, 596);
+            this.lblTime.Location = new System.Drawing.Point(8, 567);
             this.lblTime.Name = "lblTime";
             this.lblTime.Size = new System.Drawing.Size(75, 33);
             this.lblTime.TabIndex = 22;
@@ -386,7 +428,7 @@
             // 
             this.lblDate.AutoSize = true;
             this.lblDate.Font = new System.Drawing.Font("Montserrat", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDate.Location = new System.Drawing.Point(12, 633);
+            this.lblDate.Location = new System.Drawing.Point(9, 600);
             this.lblDate.Name = "lblDate";
             this.lblDate.Size = new System.Drawing.Size(74, 33);
             this.lblDate.TabIndex = 23;
@@ -397,46 +439,169 @@
             this.timer2.Enabled = true;
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
-            // txtIsConnect
+            // tabControl1
             // 
-            this.txtIsConnect.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.txtIsConnect.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtIsConnect.Font = new System.Drawing.Font("Matura MT Script Capitals", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIsConnect.ForeColor = System.Drawing.Color.Red;
-            this.txtIsConnect.Location = new System.Drawing.Point(14, 41);
-            this.txtIsConnect.Name = "txtIsConnect";
-            this.txtIsConnect.ReadOnly = true;
-            this.txtIsConnect.Size = new System.Drawing.Size(193, 34);
-            this.txtIsConnect.TabIndex = 24;
-            this.txtIsConnect.Text = "Not Connected";
-            this.txtIsConnect.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.Font = new System.Drawing.Font("Montserrat", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(1214, 709);
+            this.tabControl1.TabIndex = 24;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.panel2);
+            this.tabPage1.Controls.Add(this.lblDate);
+            this.tabPage1.Controls.Add(this.panel1);
+            this.tabPage1.Controls.Add(this.label1);
+            this.tabPage1.Controls.Add(this.lblTime);
+            this.tabPage1.Controls.Add(this.picCam);
+            this.tabPage1.Font = new System.Drawing.Font("Montserrat", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabPage1.Location = new System.Drawing.Point(4, 33);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(1206, 672);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Main";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.label18);
+            this.tabPage2.Controls.Add(this.label17);
+            this.tabPage2.Controls.Add(this.label16);
+            this.tabPage2.Controls.Add(this.label15);
+            this.tabPage2.Controls.Add(this.label14);
+            this.tabPage2.Controls.Add(this.label13);
+            this.tabPage2.Controls.Add(this.label5);
+            this.tabPage2.Controls.Add(this.label4);
+            this.tabPage2.Controls.Add(this.label3);
+            this.tabPage2.Font = new System.Drawing.Font("Montserrat", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabPage2.Location = new System.Drawing.Point(4, 33);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(1206, 672);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Infomation";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Montserrat", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(101, 142);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(142, 37);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "NHÓM 13";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Montserrat", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(101, 213);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(233, 37);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Các Thành Viên:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Montserrat", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(146, 262);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(258, 37);
+            this.label5.TabIndex = 2;
+            this.label5.Text = "- Trần Quang Huy";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Montserrat", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(146, 310);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(285, 37);
+            this.label13.TabIndex = 3;
+            this.label13.Text = "- Nguyễn Văn Dũng";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Montserrat", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(101, 65);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(397, 37);
+            this.label14.TabIndex = 4;
+            this.label14.Text = "GVHD : TS. Trần Quang Khải";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Montserrat", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(461, 262);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(146, 37);
+            this.label15.TabIndex = 5;
+            this.label15.Text = "101180237";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Montserrat", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(461, 310);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(146, 37);
+            this.label16.TabIndex = 6;
+            this.label16.Text = "101180237";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Montserrat", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(661, 262);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(116, 37);
+            this.label17.TabIndex = 7;
+            this.label17.Text = "18CDT2";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Montserrat", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(661, 310);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(116, 37);
+            this.label18.TabIndex = 8;
+            this.label18.Text = "18CDT2";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1214, 709);
-            this.Controls.Add(this.lblDate);
-            this.Controls.Add(this.lblTime);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.picCam);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.tabControl1);
             this.Font = new System.Drawing.Font("Matura MT Script Capitals", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "Form1";
             this.Text = "Digital Scale";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picCam)).EndInit();
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -473,6 +638,19 @@
         private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.Timer timer2;
         private System.Windows.Forms.TextBox txtIsConnect;
+        private System.Windows.Forms.Button btnPrint;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
     }
 }
 
