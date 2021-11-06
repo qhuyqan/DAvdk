@@ -9,12 +9,8 @@ namespace Bai1
     public class Orders
     {
         public int OrderID { get; set; }
-        public string TenKhachHang { get; set; }
-        public DateTime ThoiGian { get; set; }
-        public int MaSP { get; set; }
-        public string TenSP { get; set; }
-        public double KhoiLuong { get; set; }
-        public int DonGia { get; set; }
-        public double ThanhTien { get; set; }
+        public string CustomerName { get; set; }
+        public string Phone { get; set; }
+        public string OrderDate { get; set; }
     }
 }

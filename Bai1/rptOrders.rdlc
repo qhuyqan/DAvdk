@@ -6,25 +6,58 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>2.01317cm</Width>
+              <Width>2.68159cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>4.65433cm</Width>
+              <Width>3.68157cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.54233cm</Width>
+              <Width>3.33351cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.54233cm</Width>
+              <Width>3.5969cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.135cm</Width>
+              <Width>3.31748cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>0.6cm</Height>
+              <Height>1.17475cm</Height>
               <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox6">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Product ID</Value>
+                              <Style>
+                                <FontFamily>montserrat</FontFamily>
+                                <FontSize>13pt</FontSize>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox6</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="Textbox8">
@@ -34,8 +67,11 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Ma SP</Value>
-                              <Style />
+                              <Value>Product Name</Value>
+                              <Style>
+                                <FontFamily>montserrat</FontFamily>
+                                <FontSize>13pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -64,8 +100,11 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Ten SP</Value>
-                              <Style />
+                              <Value>Weight</Value>
+                              <Style>
+                                <FontFamily>montserrat</FontFamily>
+                                <FontSize>13pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -94,8 +133,11 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Khoi Luong</Value>
-                              <Style />
+                              <Value>Unit Price</Value>
+                              <Style>
+                                <FontFamily>montserrat</FontFamily>
+                                <FontSize>13pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -124,8 +166,11 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Don Gia</Value>
-                              <Style />
+                              <Value>Total</Value>
+                              <Style>
+                                <FontFamily>montserrat</FontFamily>
+                                <FontSize>13pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -145,58 +190,31 @@
                     </Textbox>
                   </CellContents>
                 </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Textbox16">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>Thanh Tien</Value>
-                              <Style />
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Textbox16</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.6cm</Height>
+              <Height>1.17475cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="MaSP">
+                    <Textbox Name="ProductID">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!MaSP.Value</Value>
-                              <Style />
+                              <Value>=Fields!ProductID.Value</Value>
+                              <Style>
+                                <FontFamily>montserrat</FontFamily>
+                                <FontSize>13pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>MaSP</rd:DefaultName>
+                      <rd:DefaultName>ProductID</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -212,21 +230,24 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="TenSP">
+                    <Textbox Name="ProductName">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!TenSP.Value</Value>
-                              <Style />
+                              <Value>=Fields!ProductName.Value</Value>
+                              <Style>
+                                <FontFamily>montserrat</FontFamily>
+                                <FontSize>13pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>TenSP</rd:DefaultName>
+                      <rd:DefaultName>ProductName</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -242,21 +263,24 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="KhoiLuong">
+                    <Textbox Name="Weight">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!KhoiLuong.Value</Value>
-                              <Style />
+                              <Value>=Fields!Weight.Value</Value>
+                              <Style>
+                                <FontFamily>montserrat</FontFamily>
+                                <FontSize>13pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>KhoiLuong</rd:DefaultName>
+                      <rd:DefaultName>Weight</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -272,21 +296,24 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="DonGia">
+                    <Textbox Name="UnitPrice">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!DonGia.Value</Value>
-                              <Style />
+                              <Value>=Fields!UnitPrice.Value</Value>
+                              <Style>
+                                <FontFamily>montserrat</FontFamily>
+                                <FontSize>13pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>DonGia</rd:DefaultName>
+                      <rd:DefaultName>UnitPrice</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -302,21 +329,24 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="ThanhTien">
+                    <Textbox Name="Total">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!ThanhTien.Value</Value>
-                              <Style />
+                              <Value>=Fields!Total.Value</Value>
+                              <Style>
+                                <FontFamily>montserrat</FontFamily>
+                                <FontSize>13pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>ThanhTien</rd:DefaultName>
+                      <rd:DefaultName>Total</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -354,10 +384,10 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>orderDetail</DataSetName>
-        <Top>0.7112cm</Top>
+        <Top>0.5207cm</Top>
         <Left>0.5207cm</Left>
-        <Height>1.2cm</Height>
-        <Width>14.88716cm</Width>
+        <Height>2.3495cm</Height>
+        <Width>16.61105cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -365,7 +395,7 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>2in</Height>
+    <Height>1.36333in</Height>
     <Style />
   </Body>
   <Width>6.81666in</Width>
@@ -545,14 +575,14 @@
             <PaddingBottom>2pt</PaddingBottom>
           </Style>
         </Textbox>
-        <Textbox Name="pTenKhachHang">
+        <Textbox Name="pCustomerName">
           <CanGrow>true</CanGrow>
           <KeepTogether>true</KeepTogether>
           <Paragraphs>
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>=Parameters!pTenKhachHang.Value</Value>
+                  <Value>=Parameters!pCustomerName.Value</Value>
                   <Style>
                     <FontFamily>montserrat</FontFamily>
                     <FontSize>14pt</FontSize>
@@ -562,7 +592,7 @@
               <Style />
             </Paragraph>
           </Paragraphs>
-          <rd:DefaultName>pTenKhachHang</rd:DefaultName>
+          <rd:DefaultName>pCustomerName</rd:DefaultName>
           <Top>2.99042cm</Top>
           <Left>3.8227cm</Left>
           <Height>0.76933cm</Height>
@@ -578,14 +608,14 @@
             <PaddingBottom>2pt</PaddingBottom>
           </Style>
         </Textbox>
-        <Textbox Name="pThoiGian">
+        <Textbox Name="pOrderDate">
           <CanGrow>true</CanGrow>
           <KeepTogether>true</KeepTogether>
           <Paragraphs>
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>=Parameters!pThoiGian.Value</Value>
+                  <Value>=Parameters!pOrderDate.Value</Value>
                   <Style>
                     <FontFamily>montserrat</FontFamily>
                     <FontSize>14pt</FontSize>
@@ -595,12 +625,79 @@
               <Style />
             </Paragraph>
           </Paragraphs>
-          <rd:DefaultName>pThoiGian</rd:DefaultName>
+          <rd:DefaultName>pOrderDate</rd:DefaultName>
           <Top>2.0447cm</Top>
-          <Left>10.98642cm</Left>
+          <Left>11.3157cm</Left>
           <Height>0.76933cm</Height>
-          <Width>5.802cm</Width>
+          <Width>4.09216cm</Width>
           <ZIndex>6</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox7">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Phone:</Value>
+                  <Style>
+                    <FontFamily>montserrat</FontFamily>
+                    <FontSize>14pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox2</rd:DefaultName>
+          <Top>3.93614cm</Top>
+          <Left>0.5207cm</Left>
+          <Height>0.76933cm</Height>
+          <Width>3.09267cm</Width>
+          <ZIndex>7</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="pPhone">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=Parameters!pPhone.Value</Value>
+                  <Style>
+                    <FontFamily>montserrat</FontFamily>
+                    <FontSize>14pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>pPhone</rd:DefaultName>
+          <Top>3.93614cm</Top>
+          <Left>3.90737cm</Left>
+          <Height>0.76933cm</Height>
+          <Width>5.07294cm</Width>
+          <ZIndex>8</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -619,7 +716,7 @@
       </Style>
     </PageHeader>
     <PageFooter>
-      <Height>2.54cm</Height>
+      <Height>4.55083cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -630,21 +727,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Cam On Quy Khach</Value>
-                  <Style>
-                    <FontFamily>montserrat</FontFamily>
-                    <FontSize>16pt</FontSize>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style>
-                <TextAlign>Center</TextAlign>
-              </Style>
-            </Paragraph>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>Hen Gap Lai</Value>
+                  <Value>Cam On Quy Khach - Hen Gap Lai</Value>
                   <Style>
                     <FontFamily>montserrat</FontFamily>
                     <FontSize>16pt</FontSize>
@@ -657,10 +740,78 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox5</rd:DefaultName>
-          <Top>0.17639cm</Top>
-          <Left>5.30669cm</Left>
-          <Height>2.03933cm</Height>
-          <Width>6.96617cm</Width>
+          <Top>2.82221cm</Top>
+          <Left>3.8227cm</Left>
+          <Height>0.95983cm</Height>
+          <Width>11.01133cm</Width>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox16">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Sub Total:</Value>
+                  <Style>
+                    <FontFamily>montserrat</FontFamily>
+                    <FontSize>12pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Right</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox16</rd:DefaultName>
+          <Top>0.44449cm</Top>
+          <Left>9.1567cm</Left>
+          <Height>0.6cm</Height>
+          <Width>2.3495cm</Width>
+          <ZIndex>1</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox18">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=Sum(Fields!Total.Value, "orderDetail")</Value>
+                  <Style>
+                    <FontSize>14pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox18</rd:DefaultName>
+          <Top>0.44449cm</Top>
+          <Left>12.33403cm</Left>
+          <Height>0.6cm</Height>
+          <Width>2.5cm</Width>
+          <ZIndex>2</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -704,25 +855,25 @@
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
-        <Field Name="DonGia">
-          <DataField>DonGia</DataField>
+        <Field Name="ProductID">
+          <DataField>ProductID</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="KhoiLuong">
-          <DataField>KhoiLuong</DataField>
-          <rd:TypeName>System.Double</rd:TypeName>
-        </Field>
-        <Field Name="MaSP">
-          <DataField>MaSP</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="TenSP">
-          <DataField>TenSP</DataField>
+        <Field Name="ProductName">
+          <DataField>ProductName</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="ThanhTien">
-          <DataField>ThanhTien</DataField>
-          <rd:TypeName>System.Double</rd:TypeName>
+        <Field Name="Total">
+          <DataField>Total</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="UnitPrice">
+          <DataField>UnitPrice</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Weight">
+          <DataField>Weight</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>
@@ -737,11 +888,15 @@
       <DataType>String</DataType>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
-    <ReportParameter Name="pTenKhachHang">
+    <ReportParameter Name="pCustomerName">
       <DataType>String</DataType>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
-    <ReportParameter Name="pThoiGian">
+    <ReportParameter Name="pOrderDate">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="pPhone">
       <DataType>String</DataType>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>

@@ -25,9 +25,9 @@ namespace Bai1
             OrderDetailBindingSource.DataSource = _list;
             Microsoft.Reporting.WinForms.ReportParameter[] p = new Microsoft.Reporting.WinForms.ReportParameter[]{
                 new Microsoft.Reporting.WinForms.ReportParameter("pOrderID",_orders.OrderID.ToString()),
-                new Microsoft.Reporting.WinForms.ReportParameter("pTenKhachHang",_orders.TenKhachHang),
-                new Microsoft.Reporting.WinForms.ReportParameter("pThoiGian",_orders.ThoiGian.ToString("MM/dd/yyyy"))
-
+                new Microsoft.Reporting.WinForms.ReportParameter("pCustomerName",_orders.CustomerName),
+                new Microsoft.Reporting.WinForms.ReportParameter("pOrderDate",_orders.OrderDate),
+                new Microsoft.Reporting.WinForms.ReportParameter("pPhone",_orders.Phone)
             };
             this.reportViewer.LocalReport.SetParameters(p);
             this.reportViewer.RefreshReport();

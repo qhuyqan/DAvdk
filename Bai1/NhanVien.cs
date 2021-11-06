@@ -16,6 +16,15 @@ namespace Bai1
             taikhoan = tk;
             matkhau = mk;
         }
+        public bool CheckLength_Sdt()
+        {
+            bool Check_Length = false;
+            if (sdt.Length <= 10)
+            {
+                return true;
+            }
+            return Check_Length;
+        }
         //Kiem tra dinh dang mat khau: >= 6 ki tu ; co ca chu va so
         public bool KiemTraMatKhau()
         {

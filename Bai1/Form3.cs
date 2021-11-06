@@ -79,40 +79,47 @@ namespace Bai1
                 NhanVien nv = new NhanVien(txtHoten.Text, txtSdt.Text, txtTK.Text, txtMK.Text);
                 if (nv.KiemTraMatKhau() == true)
                 {
-                    OpenConnection();
+                    if (nv.CheckLength_Sdt() == true)
+                    {
+                        OpenConnection();
 
-                    OleDbCommand sqlCmd = new OleDbCommand();
-                    sqlCmd.CommandType = CommandType.Text;
-                    sqlCmd.CommandText = "INSERT INTO QuanLyNhanVien(Hoten,SoDienThoai,Tk,Mk) VALUES (@ten,@sdt,@tk,@mk)";
+                        OleDbCommand sqlCmd = new OleDbCommand();
+                        sqlCmd.CommandType = CommandType.Text;
+                        sqlCmd.CommandText = "INSERT INTO DanhSachNhanVien(Hoten,SoDienThoai,Tk,Mk) VALUES (@ten,@sdt,@tk,@mk)";
 
-                    OleDbParameter ten = new OleDbParameter("@ten", OleDbType.BSTR);
-                    ten.Value = txtHoten.Text.Trim();
-                    sqlCmd.Parameters.Add(ten);
+                        OleDbParameter ten = new OleDbParameter("@ten", OleDbType.BSTR);
+                        ten.Value = txtHoten.Text.Trim();
+                        sqlCmd.Parameters.Add(ten);
 
-                    OleDbParameter sdt = new OleDbParameter("@sdt", OleDbType.Integer);
-                    sdt.Value = int.Parse(txtSdt.Text.Trim());
-                    sqlCmd.Parameters.Add(sdt);
+                        OleDbParameter sdt = new OleDbParameter("@sdt", OleDbType.Integer);
+                        sdt.Value = int.Parse(txtSdt.Text.Trim());
+                        sqlCmd.Parameters.Add(sdt);
 
-                    OleDbParameter tk = new OleDbParameter("@tk", OleDbType.BSTR);
-                    tk.Value = txtTK.Text.Trim();
-                    sqlCmd.Parameters.Add(tk);
+                        OleDbParameter tk = new OleDbParameter("@tk", OleDbType.BSTR);
+                        tk.Value = txtTK.Text.Trim();
+                        sqlCmd.Parameters.Add(tk);
 
-                    OleDbParameter mk = new OleDbParameter("@mk", OleDbType.BSTR);
-                    mk.Value = txtMK.Text.Trim();
-                    sqlCmd.Parameters.Add(mk);
+                        OleDbParameter mk = new OleDbParameter("@mk", OleDbType.BSTR);
+                        mk.Value = txtMK.Text.Trim();
+                        sqlCmd.Parameters.Add(mk);
 
-                    sqlCmd.Connection = sqlCon;
-                    int result = sqlCmd.ExecuteNonQuery();
-                    if (result > 0)
-                    {                        
-                        MessageBox.Show("Successfull");
-                        CloseConnection();
-                        Close();
+                        sqlCmd.Connection = sqlCon;
+                        int result = sqlCmd.ExecuteNonQuery();
+                        if (result > 0)
+                        {
+                            MessageBox.Show("Successfull");
+                            CloseConnection();
+                            Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Fail");
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("Fail");
-                    }                    
+                        MessageBox.Show("Số Điện Thoại chỉ bao gồm 10 số!");
+                    }
                 }
                 else
                 {

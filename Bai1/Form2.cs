@@ -47,7 +47,7 @@ namespace Bai1
                 OpenConnection();
                 OleDbCommand sqlCmd = new OleDbCommand();
                 sqlCmd.CommandType = CommandType.Text;
-                sqlCmd.CommandText = "SELECT * FROM QuanLyNhanVien WHERE Tk='" + txtTaiKhoan.Text + "' and Mk='" + txtMatKhau.Text + "'";
+                sqlCmd.CommandText = "SELECT * FROM DanhSachNhanVien WHERE Tk='" + txtTaiKhoan.Text + "' and Mk='" + txtMatKhau.Text + "'";
                 sqlCmd.Connection = sqlCon;
                 OleDbDataReader reader = sqlCmd.ExecuteReader();
 

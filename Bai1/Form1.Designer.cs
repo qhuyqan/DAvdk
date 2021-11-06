@@ -56,6 +56,8 @@
             this.txtThanhTien = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtSDT = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
             this.btnPrint = new System.Windows.Forms.Button();
             this.txtTongTien = new System.Windows.Forms.TextBox();
             this.picCam = new System.Windows.Forms.PictureBox();
@@ -64,16 +66,17 @@
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.lblScanStatus = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picCam)).BeginInit();
@@ -116,7 +119,7 @@
             this.panel2.Controls.Add(this.btnDis);
             this.panel2.Location = new System.Drawing.Point(1000, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(252, 688);
+            this.panel2.Size = new System.Drawing.Size(252, 723);
             this.panel2.TabIndex = 21;
             // 
             // txtIsConnect
@@ -229,7 +232,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Montserrat", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(14, 122);
+            this.label8.Location = new System.Drawing.Point(14, 169);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(188, 35);
             this.label8.TabIndex = 20;
@@ -239,7 +242,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Montserrat", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(14, 180);
+            this.label9.Location = new System.Drawing.Point(14, 227);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(194, 35);
             this.label9.TabIndex = 21;
@@ -249,7 +252,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Montserrat", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(14, 238);
+            this.label10.Location = new System.Drawing.Point(14, 285);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(154, 35);
             this.label10.TabIndex = 22;
@@ -259,7 +262,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Montserrat", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(14, 296);
+            this.label11.Location = new System.Drawing.Point(14, 343);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(115, 35);
             this.label11.TabIndex = 23;
@@ -269,7 +272,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Montserrat", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(14, 354);
+            this.label12.Location = new System.Drawing.Point(14, 401);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(151, 35);
             this.label12.TabIndex = 24;
@@ -282,53 +285,48 @@
             this.txtKhachHang.Multiline = true;
             this.txtKhachHang.Name = "txtKhachHang";
             this.txtKhachHang.Size = new System.Drawing.Size(289, 35);
-            this.txtKhachHang.TabIndex = 18;
+            this.txtKhachHang.TabIndex = 1;
             // 
             // txtMaSanPham
             // 
             this.txtMaSanPham.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaSanPham.Location = new System.Drawing.Point(245, 122);
-            this.txtMaSanPham.Multiline = true;
+            this.txtMaSanPham.Location = new System.Drawing.Point(245, 169);
             this.txtMaSanPham.Name = "txtMaSanPham";
             this.txtMaSanPham.ReadOnly = true;
-            this.txtMaSanPham.Size = new System.Drawing.Size(289, 35);
-            this.txtMaSanPham.TabIndex = 25;
+            this.txtMaSanPham.Size = new System.Drawing.Size(289, 36);
+            this.txtMaSanPham.TabIndex = 3;
             // 
             // txtTenSanPham
             // 
             this.txtTenSanPham.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenSanPham.Location = new System.Drawing.Point(245, 180);
-            this.txtTenSanPham.Multiline = true;
+            this.txtTenSanPham.Location = new System.Drawing.Point(245, 227);
             this.txtTenSanPham.Name = "txtTenSanPham";
             this.txtTenSanPham.ReadOnly = true;
-            this.txtTenSanPham.Size = new System.Drawing.Size(289, 35);
-            this.txtTenSanPham.TabIndex = 26;
-            this.txtTenSanPham.TextChanged += new System.EventHandler(this.txtTenSanPham_TextChanged);
+            this.txtTenSanPham.Size = new System.Drawing.Size(289, 36);
+            this.txtTenSanPham.TabIndex = 4;
             // 
             // txtKhoiLuong
             // 
             this.txtKhoiLuong.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtKhoiLuong.Location = new System.Drawing.Point(245, 238);
-            this.txtKhoiLuong.Multiline = true;
+            this.txtKhoiLuong.Location = new System.Drawing.Point(245, 285);
             this.txtKhoiLuong.Name = "txtKhoiLuong";
             this.txtKhoiLuong.ReadOnly = true;
-            this.txtKhoiLuong.Size = new System.Drawing.Size(289, 35);
-            this.txtKhoiLuong.TabIndex = 27;
+            this.txtKhoiLuong.Size = new System.Drawing.Size(289, 36);
+            this.txtKhoiLuong.TabIndex = 5;
             // 
             // txtDonGia
             // 
             this.txtDonGia.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDonGia.Location = new System.Drawing.Point(245, 296);
-            this.txtDonGia.Multiline = true;
+            this.txtDonGia.Location = new System.Drawing.Point(245, 343);
             this.txtDonGia.Name = "txtDonGia";
             this.txtDonGia.ReadOnly = true;
-            this.txtDonGia.Size = new System.Drawing.Size(289, 35);
-            this.txtDonGia.TabIndex = 28;
+            this.txtDonGia.Size = new System.Drawing.Size(289, 36);
+            this.txtDonGia.TabIndex = 6;
             // 
             // btnClear
             // 
             this.btnClear.Font = new System.Drawing.Font("Montserrat", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.Location = new System.Drawing.Point(20, 522);
+            this.btnClear.Location = new System.Drawing.Point(43, 554);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(198, 79);
             this.btnClear.TabIndex = 16;
@@ -339,18 +337,17 @@
             // txtThanhTien
             // 
             this.txtThanhTien.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtThanhTien.Location = new System.Drawing.Point(245, 354);
-            this.txtThanhTien.Multiline = true;
+            this.txtThanhTien.Location = new System.Drawing.Point(245, 401);
             this.txtThanhTien.Name = "txtThanhTien";
             this.txtThanhTien.ReadOnly = true;
-            this.txtThanhTien.Size = new System.Drawing.Size(289, 35);
-            this.txtThanhTien.TabIndex = 29;
+            this.txtThanhTien.Size = new System.Drawing.Size(289, 36);
+            this.txtThanhTien.TabIndex = 7;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Montserrat", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(14, 435);
+            this.label2.Location = new System.Drawing.Point(14, 482);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(138, 35);
             this.label2.TabIndex = 30;
@@ -359,6 +356,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.panel1.Controls.Add(this.txtSDT);
+            this.panel1.Controls.Add(this.label19);
             this.panel1.Controls.Add(this.btnPrint);
             this.panel1.Controls.Add(this.txtTongTien);
             this.panel1.Controls.Add(this.label2);
@@ -378,13 +377,31 @@
             this.panel1.Controls.Add(this.label6);
             this.panel1.Location = new System.Drawing.Point(403, 65);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(605, 633);
+            this.panel1.Size = new System.Drawing.Size(605, 658);
             this.panel1.TabIndex = 17;
+            // 
+            // txtSDT
+            // 
+            this.txtSDT.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSDT.Location = new System.Drawing.Point(245, 114);
+            this.txtSDT.Name = "txtSDT";
+            this.txtSDT.Size = new System.Drawing.Size(289, 36);
+            this.txtSDT.TabIndex = 2;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Montserrat", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(14, 114);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(189, 35);
+            this.label19.TabIndex = 34;
+            this.label19.Text = "Số Điện Thoại";
             // 
             // btnPrint
             // 
             this.btnPrint.Font = new System.Drawing.Font("Montserrat", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrint.Location = new System.Drawing.Point(267, 522);
+            this.btnPrint.Location = new System.Drawing.Point(377, 554);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(198, 79);
             this.btnPrint.TabIndex = 32;
@@ -395,12 +412,11 @@
             // txtTongTien
             // 
             this.txtTongTien.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTongTien.Location = new System.Drawing.Point(245, 435);
-            this.txtTongTien.Multiline = true;
+            this.txtTongTien.Location = new System.Drawing.Point(245, 482);
             this.txtTongTien.Name = "txtTongTien";
             this.txtTongTien.ReadOnly = true;
-            this.txtTongTien.Size = new System.Drawing.Size(289, 35);
-            this.txtTongTien.TabIndex = 31;
+            this.txtTongTien.Size = new System.Drawing.Size(289, 36);
+            this.txtTongTien.TabIndex = 8;
             // 
             // picCam
             // 
@@ -422,7 +438,6 @@
             this.lblTime.Size = new System.Drawing.Size(75, 33);
             this.lblTime.TabIndex = 22;
             this.lblTime.Text = "Time";
-            this.lblTime.Click += new System.EventHandler(this.label3_Click);
             // 
             // lblDate
             // 
@@ -448,11 +463,12 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1214, 709);
+            this.tabControl1.Size = new System.Drawing.Size(1214, 738);
             this.tabControl1.TabIndex = 24;
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.lblScanStatus);
             this.tabPage1.Controls.Add(this.panel2);
             this.tabPage1.Controls.Add(this.lblDate);
             this.tabPage1.Controls.Add(this.panel1);
@@ -463,10 +479,21 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 33);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1206, 672);
+            this.tabPage1.Size = new System.Drawing.Size(1206, 701);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Main";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // lblScanStatus
+            // 
+            this.lblScanStatus.AutoSize = true;
+            this.lblScanStatus.BackColor = System.Drawing.Color.Red;
+            this.lblScanStatus.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblScanStatus.Location = new System.Drawing.Point(10, 403);
+            this.lblScanStatus.Name = "lblScanStatus";
+            this.lblScanStatus.Size = new System.Drawing.Size(102, 27);
+            this.lblScanStatus.TabIndex = 24;
+            this.lblScanStatus.Text = "Stopped";
             // 
             // tabPage2
             // 
@@ -483,90 +510,10 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 33);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1206, 672);
+            this.tabPage2.Size = new System.Drawing.Size(1206, 701);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Infomation";
             this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Montserrat", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(101, 142);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(142, 37);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "NHÓM 13";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Montserrat", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(101, 213);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(233, 37);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "Các Thành Viên:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Montserrat", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(146, 262);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(258, 37);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "- Trần Quang Huy";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Montserrat", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(146, 310);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(285, 37);
-            this.label13.TabIndex = 3;
-            this.label13.Text = "- Nguyễn Văn Dũng";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Montserrat", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(101, 65);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(397, 37);
-            this.label14.TabIndex = 4;
-            this.label14.Text = "GVHD : TS. Trần Quang Khải";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Montserrat", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(461, 262);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(146, 37);
-            this.label15.TabIndex = 5;
-            this.label15.Text = "101180237";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Montserrat", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(461, 310);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(146, 37);
-            this.label16.TabIndex = 6;
-            this.label16.Text = "101180237";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Montserrat", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(661, 262);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(116, 37);
-            this.label17.TabIndex = 7;
-            this.label17.Text = "18CDT2";
             // 
             // label18
             // 
@@ -578,11 +525,91 @@
             this.label18.TabIndex = 8;
             this.label18.Text = "18CDT2";
             // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Montserrat", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(661, 262);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(116, 37);
+            this.label17.TabIndex = 7;
+            this.label17.Text = "18CDT2";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Montserrat", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(461, 310);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(146, 37);
+            this.label16.TabIndex = 6;
+            this.label16.Text = "101180237";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Montserrat", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(461, 262);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(146, 37);
+            this.label15.TabIndex = 5;
+            this.label15.Text = "101180237";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Montserrat", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(101, 65);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(415, 37);
+            this.label14.TabIndex = 4;
+            this.label14.Text = "GVHD : ThS. Trần Quang Khải";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Montserrat", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(146, 310);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(285, 37);
+            this.label13.TabIndex = 3;
+            this.label13.Text = "- Nguyễn Văn Dũng";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Montserrat", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(146, 262);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(258, 37);
+            this.label5.TabIndex = 2;
+            this.label5.Text = "- Trần Quang Huy";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Montserrat", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(101, 213);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(233, 37);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Các Thành Viên:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Montserrat", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(101, 142);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(142, 37);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "NHÓM 13";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1214, 709);
+            this.ClientSize = new System.Drawing.Size(1214, 738);
             this.Controls.Add(this.tabControl1);
             this.Font = new System.Drawing.Font("Matura MT Script Capitals", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -651,6 +678,9 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblScanStatus;
+        private System.Windows.Forms.TextBox txtSDT;
+        private System.Windows.Forms.Label label19;
     }
 }
 

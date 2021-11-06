@@ -28,14 +28,14 @@ namespace Bai1
                 {
                     db.Open();
                 }
-                string sql = "SELECT * FROM SanPhamDaBan";
-                ordersBindingSource2.DataSource = db.Query<Orders>(sql, CommandType.Text);
+                string sql = "SELECT * FROM Orders";
+                ordersBindingSource.DataSource = db.Query<Orders>(sql, CommandType.Text);
             }
         }
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
-            Orders obj = ordersBindingSource2.Current as Orders;
+            Orders obj = ordersBindingSource.Current as Orders;
             if (obj != null)
             {
                 using (IDbConnection db = new OleDbConnection(ConfigurationManager.ConnectionStrings["Bai1.Properties.Settings.Database1ConnectionString"].ConnectionString))
@@ -44,10 +44,10 @@ namespace Bai1
                     {
                         db.Open();
                     }
-                    string sql = "SELECT * FROM SanPhamDaBan WHERE OrderID = " + obj.OrderID + "";
+                    string sql = "SELECT * FROM OrderDetails WHERE OrderID = " + obj.OrderID + "";
                     List<OrderDetail> list = db.Query<OrderDetail>(sql, CommandType.Text).ToList();
                     Form5 f5 = new Form5(obj, list);
-                    f5.ShowDialog();                    
+                    f5.ShowDialog();
                 }
             }
         }
