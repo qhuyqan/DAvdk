@@ -74,7 +74,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(12, 73);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1054, 585);
+            this.dataGridView1.Size = new System.Drawing.Size(927, 585);
             this.dataGridView1.TabIndex = 3;
             // 
             // ordersBindingSource
@@ -117,7 +117,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1078, 665);
+            this.ClientSize = new System.Drawing.Size(952, 665);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.btnLoad);
@@ -126,6 +126,7 @@
             this.Name = "Form4";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Orders";
+            this.Load += new System.EventHandler(this.Form4_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordersBindingSource)).EndInit();
             this.ResumeLayout(false);

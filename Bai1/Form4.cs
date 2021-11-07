@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -9,7 +10,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Dapper;
 using System.Configuration;
-using System.Data.OleDb;
 
 namespace Bai1
 {
@@ -22,7 +22,7 @@ namespace Bai1
 
         private void btnLoad_Click(object sender, EventArgs e)
         {
-            using (IDbConnection db = new OleDbConnection(ConfigurationManager.ConnectionStrings["Bai1.Properties.Settings.Database1ConnectionString"].ConnectionString))
+            using (IDbConnection db = new SqlConnection(ConfigurationManager.ConnectionStrings["Bai1.Properties.Settings.Database1ConnectionString"].ConnectionString))
             {
                 if (db.State == ConnectionState.Closed)
                 {
@@ -31,6 +31,10 @@ namespace Bai1
                 string sql = "SELECT * FROM Orders";
                 ordersBindingSource.DataSource = db.Query<Orders>(sql, CommandType.Text);
             }
+
+            try { dataGridView1.Sort(dataGridView1.Columns["OrderID"], ListSortDirection.Ascending); }
+            catch { }
+
         }
 
         private void btnPrint_Click(object sender, EventArgs e)
@@ -38,7 +42,7 @@ namespace Bai1
             Orders obj = ordersBindingSource.Current as Orders;
             if (obj != null)
             {
-                using (IDbConnection db = new OleDbConnection(ConfigurationManager.ConnectionStrings["Bai1.Properties.Settings.Database1ConnectionString"].ConnectionString))
+                using (IDbConnection db = new SqlConnection(ConfigurationManager.ConnectionStrings["Bai1.Properties.Settings.Database1ConnectionString"].ConnectionString))
                 {
                     if (db.State == ConnectionState.Closed)
                     {
@@ -50,6 +54,10 @@ namespace Bai1
                     f5.ShowDialog();
                 }
             }
+        }
+
+        private void Form4_Load(object sender, EventArgs e)
+        {
         }
     }
 }

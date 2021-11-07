@@ -13,7 +13,7 @@ namespace Bai1
 {
     public partial class Form3 : Form
     {
-        string strCon = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=Database1.mdb";
+        string strCon = @"Data Source=QUANGHUY;Initial Catalog=QuanLyBanHang;Persist Security Info=True;User ID=sa";
         OleDbConnection sqlCon = null;
         // Open
         public void OpenConnection()
@@ -85,29 +85,14 @@ namespace Bai1
 
                         OleDbCommand sqlCmd = new OleDbCommand();
                         sqlCmd.CommandType = CommandType.Text;
-                        sqlCmd.CommandText = "INSERT INTO DanhSachNhanVien(Hoten,SoDienThoai,Tk,Mk) VALUES (@ten,@sdt,@tk,@mk)";
-
-                        OleDbParameter ten = new OleDbParameter("@ten", OleDbType.BSTR);
-                        ten.Value = txtHoten.Text.Trim();
-                        sqlCmd.Parameters.Add(ten);
-
-                        OleDbParameter sdt = new OleDbParameter("@sdt", OleDbType.Integer);
-                        sdt.Value = int.Parse(txtSdt.Text.Trim());
-                        sqlCmd.Parameters.Add(sdt);
-
-                        OleDbParameter tk = new OleDbParameter("@tk", OleDbType.BSTR);
-                        tk.Value = txtTK.Text.Trim();
-                        sqlCmd.Parameters.Add(tk);
-
-                        OleDbParameter mk = new OleDbParameter("@mk", OleDbType.BSTR);
-                        mk.Value = txtMK.Text.Trim();
-                        sqlCmd.Parameters.Add(mk);
+                        sqlCmd.CommandText = "INSERT INTO DanhSachNhanVien(Hoten,SoDienThoai,Tk,Mk)" + 
+                                             "VALUES ('" + txtHoten.Text + "','" + txtSdt.Text + "','" + txtTK.Text + "','" + txtMK.Text + "')";
 
                         sqlCmd.Connection = sqlCon;
                         int result = sqlCmd.ExecuteNonQuery();
                         if (result > 0)
                         {
-                            MessageBox.Show("Successfull");
+                            MessageBox.Show("Create Successfully");
                             CloseConnection();
                             Close();
                         }

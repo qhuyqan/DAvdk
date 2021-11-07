@@ -52,3 +52,6 @@ C:\Users\qhuyd\Desktop\DA\Bai1\Bai1\obj\Debug\RdlCompile.cache
 C:\Users\qhuyd\Desktop\DA\Bai1\Bai1\obj\Debug\RdlCompile.compiled
 C:\Users\qhuyd\Desktop\DA\Bai1\Bai1\obj\Debug\Bai1.Form5.resources
 C:\Users\qhuyd\Desktop\DA\Bai1\Bai1\obj\Debug\Bai1.csprojResolveAssemblyReference.cache
+C:\Users\qhuyd\Desktop\da2\Bai1\Bai1\bin\Debug\Bai1.exe.config
+C:\Users\qhuyd\Desktop\da2\Bai1\Bai1\obj\Debug\Bai1.exe
+C:\Users\qhuyd\Desktop\da2\Bai1\Bai1\obj\Debug\Bai1.pdb

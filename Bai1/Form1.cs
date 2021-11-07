@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.OleDb;
 using Emgu.CV;
 using Emgu.CV.Structure;
 using ZXing;
@@ -19,13 +19,13 @@ namespace Bai1
     {
         double tongTien = 0;
         Capture Camera;
-        string strCon = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\qhuyd\Desktop\DA\Bai1\Bai1\bin\Debug\Database1.mdb";
-        OleDbConnection sqlCon = null;
+        string strCon = @"Data Source=QUANGHUY;Initial Catalog=QuanLyBanHang;Persist Security Info=True;User ID=sa;Password=quanghuy21";
+        SqlConnection sqlCon = null;
         public void OpenConnection()
         {
             if (sqlCon == null)
             {
-                sqlCon = new OleDbConnection(strCon);
+                sqlCon = new SqlConnection(strCon);
             }
             if (sqlCon.State == ConnectionState.Closed)
             {
@@ -47,6 +47,7 @@ namespace Bai1
 
         private void btnEsc_Click(object sender, EventArgs e)
         {
+            //CloseConnection();
             Close();
             Form2 f2 = new Form2();
             f2.ShowDialog();
@@ -60,6 +61,7 @@ namespace Bai1
                 btnCon.Enabled = false;
                 btnDis.Enabled = true;
                 btnScan.Enabled = true;
+                button1.Enabled = true;
                 btnNew.Enabled = true;
                 txtIsConnect.Text = "Connected";
                 txtIsConnect.ForeColor = Color.Green;
@@ -73,6 +75,7 @@ namespace Bai1
             btnCon.Enabled = true;
             btnDis.Enabled = false;
             btnScan.Enabled = false;
+            button1.Enabled = false;
             btnNew.Enabled = false;
             txtIsConnect.Text = "Not Connected";
             txtIsConnect.ForeColor = Color.Red;
@@ -80,25 +83,14 @@ namespace Bai1
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-            OpenConnection();
-            OleDbCommand sqlCmd = new OleDbCommand();
-            sqlCmd.CommandType = CommandType.Text;
-            sqlCmd.CommandText = "INSERT INTO Orders(CustomerName,Phone,OrderDate)" +
-                                 " VALUES ('" + txtKhachHang.Text + "','" + txtSDT.Text + "','" + lblDate.Text + " " + lblTime.Text + "')";
-
-            //------------------Them vao BanHang-------------------//
-            sqlCmd.Connection = sqlCon;
-            int result = sqlCmd.ExecuteNonQuery();
-            if (result > 0)
-            {
-                CloseConnection();
-                txtKhachHang.Text = "";
-                tongTien = 0;
-                txtTongTien.Text = "";
-                timer1.Stop();
-                lblScanStatus.BackColor = Color.Red;
-                lblScanStatus.Text = "Stopped";
-            }
+            CloseConnection();
+            txtKhachHang.Text = "";
+            txtSDT.Text = "";
+            tongTien = 0;
+            txtTongTien.Text = "";
+            timer1.Stop();
+            lblScanStatus.BackColor = Color.Red;
+            lblScanStatus.Text = "Stopped";
         }
 
         private void Camera_ImageGrabbed(object sender, EventArgs e)
@@ -125,7 +117,7 @@ namespace Bai1
         }
         private void timer1_Tick(object sender, EventArgs e)
         {
-            serialPort1.Write("get_weight");
+            //serialPort1.Write("get_weight");
             Bitmap img = (Bitmap)picCam.Image;
             if (img != null)
             {
@@ -141,11 +133,11 @@ namespace Bai1
                     }
 
                     OpenConnection();
-                    OleDbCommand sqlCmd = new OleDbCommand();
+                    SqlCommand sqlCmd = new SqlCommand();
                     sqlCmd.CommandType = CommandType.Text;
                     sqlCmd.CommandText = "SELECT * FROM ProductList WHERE ProductID = " + txtMaSanPham.Text + "";
                     sqlCmd.Connection = sqlCon;
-                    OleDbDataReader reader = sqlCmd.ExecuteReader();
+                    SqlDataReader reader = sqlCmd.ExecuteReader();
                     //serialPort1_DataReceived();
                     if (reader.Read() == true)
                     {
@@ -184,14 +176,13 @@ namespace Bai1
             try
             {
                 if (txtKhachHang.Text != "")
-                { 
-                    //-------------Them vao detail--------------//
+                {
+                    //-------------Them vao OrderDetail--------------//
                     OpenConnection();
-                    OleDbCommand sqlCmd1 = new OleDbCommand();
+                    SqlCommand sqlCmd1 = new SqlCommand();
                     sqlCmd1.CommandType = CommandType.Text;
-                    sqlCmd1.CommandText = "INSERT INTO OrderDetails(ProductID,ProductName,Weight,UnitPrice,Total) " +
-                                          "VALUES ('" + txtMaSanPham.Text + "','" + txtTenSanPham.Text + "','" + txtKhoiLuong.Text + "','" + txtDonGia.Text + "','" + txtThanhTien.Text + "')";
-                    
+                    sqlCmd1.CommandText = "INSERT INTO OrderDetails " +
+                                          "VALUES ((SELECT MAX(OrderID) FROM Orders),N'" + txtMaSanPham.Text + "',N'" + txtTenSanPham.Text + "',N'" + txtKhoiLuong.Text + "',N'" + txtDonGia.Text + "',N'" + txtThanhTien.Text + "')";
                     sqlCmd1.Connection = sqlCon;
                     int result1 = sqlCmd1.ExecuteNonQuery();
 
@@ -219,7 +210,6 @@ namespace Bai1
             {
                 MessageBox.Show("chưa quét");
             }
-
         }
 
         private void timer2_Tick(object sender, EventArgs e)
@@ -238,6 +228,22 @@ namespace Bai1
         {
             Form4 f4 = new Form4();
             f4.ShowDialog();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //------------------Them vao Orders-------------------//
+            OpenConnection();
+            SqlCommand sqlCmd = new SqlCommand();
+            sqlCmd.CommandType = CommandType.Text;
+            sqlCmd.CommandText = "INSERT INTO Orders(CustomerName,Phone,OrderDate)" +
+                                 " VALUES (N'" + txtKhachHang.Text + "','" + txtSDT.Text + "','" + lblDate.Text + " " + lblTime.Text + "')";         
+            sqlCmd.Connection = sqlCon;
+            int result = sqlCmd.ExecuteNonQuery();
+            if (result > 0)
+            {
+                CloseConnection();
+            }
         }
     }
 }

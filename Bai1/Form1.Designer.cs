@@ -34,7 +34,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
-            this.txtIsConnect = new System.Windows.Forms.TextBox();
             this.btnNew = new System.Windows.Forms.Button();
             this.btnScan = new System.Windows.Forms.Button();
             this.btnCon = new System.Windows.Forms.Button();
@@ -66,6 +65,7 @@
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
             this.lblScanStatus = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.label18 = new System.Windows.Forms.Label();
@@ -77,6 +77,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.txtIsConnect = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picCam)).BeginInit();
@@ -112,29 +113,16 @@
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel2.Controls.Add(this.txtIsConnect);
+            this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.btnNew);
             this.panel2.Controls.Add(this.btnScan);
             this.panel2.Controls.Add(this.btnCon);
             this.panel2.Controls.Add(this.btnEsc);
             this.panel2.Controls.Add(this.btnDis);
-            this.panel2.Location = new System.Drawing.Point(1000, 0);
+            this.panel2.Location = new System.Drawing.Point(1000, -21);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(252, 723);
+            this.panel2.Size = new System.Drawing.Size(252, 744);
             this.panel2.TabIndex = 21;
-            // 
-            // txtIsConnect
-            // 
-            this.txtIsConnect.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.txtIsConnect.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtIsConnect.Font = new System.Drawing.Font("Matura MT Script Capitals", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIsConnect.ForeColor = System.Drawing.Color.Red;
-            this.txtIsConnect.Location = new System.Drawing.Point(16, 41);
-            this.txtIsConnect.Name = "txtIsConnect";
-            this.txtIsConnect.ReadOnly = true;
-            this.txtIsConnect.Size = new System.Drawing.Size(193, 34);
-            this.txtIsConnect.TabIndex = 24;
-            this.txtIsConnect.Text = "Not Connected";
-            this.txtIsConnect.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btnNew
             // 
@@ -142,10 +130,10 @@
             this.btnNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNew.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)), true);
             this.btnNew.Image = ((System.Drawing.Image)(resources.GetObject("btnNew.Image")));
-            this.btnNew.Location = new System.Drawing.Point(25, 423);
+            this.btnNew.Location = new System.Drawing.Point(51, 509);
             this.btnNew.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnNew.Name = "btnNew";
-            this.btnNew.Size = new System.Drawing.Size(164, 102);
+            this.btnNew.Size = new System.Drawing.Size(111, 104);
             this.btnNew.TabIndex = 21;
             this.btnNew.UseVisualStyleBackColor = false;
             this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
@@ -156,7 +144,7 @@
             this.btnScan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnScan.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)), true);
             this.btnScan.Image = ((System.Drawing.Image)(resources.GetObject("btnScan.Image")));
-            this.btnScan.Location = new System.Drawing.Point(25, 308);
+            this.btnScan.Location = new System.Drawing.Point(25, 263);
             this.btnScan.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnScan.Name = "btnScan";
             this.btnScan.Size = new System.Drawing.Size(164, 90);
@@ -171,10 +159,10 @@
             this.btnCon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCon.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)), true);
             this.btnCon.Image = ((System.Drawing.Image)(resources.GetObject("btnCon.Image")));
-            this.btnCon.Location = new System.Drawing.Point(25, 99);
+            this.btnCon.Location = new System.Drawing.Point(56, 99);
             this.btnCon.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnCon.Name = "btnCon";
-            this.btnCon.Size = new System.Drawing.Size(171, 90);
+            this.btnCon.Size = new System.Drawing.Size(106, 65);
             this.btnCon.TabIndex = 1;
             this.btnCon.UseVisualStyleBackColor = false;
             this.btnCon.Click += new System.EventHandler(this.btnCon_Click);
@@ -185,10 +173,10 @@
             this.btnEsc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEsc.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)), true);
             this.btnEsc.Image = ((System.Drawing.Image)(resources.GetObject("btnEsc.Image")));
-            this.btnEsc.Location = new System.Drawing.Point(56, 567);
+            this.btnEsc.Location = new System.Drawing.Point(56, 640);
             this.btnEsc.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnEsc.Name = "btnEsc";
-            this.btnEsc.Size = new System.Drawing.Size(115, 73);
+            this.btnEsc.Size = new System.Drawing.Size(106, 73);
             this.btnEsc.TabIndex = 0;
             this.btnEsc.UseVisualStyleBackColor = false;
             this.btnEsc.Click += new System.EventHandler(this.btnEsc_Click);
@@ -200,10 +188,10 @@
             this.btnDis.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDis.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)), true);
             this.btnDis.Image = ((System.Drawing.Image)(resources.GetObject("btnDis.Image")));
-            this.btnDis.Location = new System.Drawing.Point(25, 195);
+            this.btnDis.Location = new System.Drawing.Point(56, 179);
             this.btnDis.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnDis.Name = "btnDis";
-            this.btnDis.Size = new System.Drawing.Size(164, 90);
+            this.btnDis.Size = new System.Drawing.Size(106, 65);
             this.btnDis.TabIndex = 2;
             this.btnDis.UseVisualStyleBackColor = false;
             this.btnDis.Click += new System.EventHandler(this.btnDis_Click);
@@ -484,6 +472,20 @@
             this.tabPage1.Text = "Main";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // button1
+            // 
+            this.button1.Enabled = false;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Montserrat", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.Location = new System.Drawing.Point(56, 414);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(106, 89);
+            this.button1.TabIndex = 35;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // lblScanStatus
             // 
             this.lblScanStatus.AutoSize = true;
@@ -605,6 +607,21 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "NHÓM 13";
             // 
+            // txtIsConnect
+            // 
+            this.txtIsConnect.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.txtIsConnect.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtIsConnect.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIsConnect.ForeColor = System.Drawing.Color.Red;
+            this.txtIsConnect.Location = new System.Drawing.Point(14, 39);
+            this.txtIsConnect.Name = "txtIsConnect";
+            this.txtIsConnect.ReadOnly = true;
+            this.txtIsConnect.Size = new System.Drawing.Size(185, 25);
+            this.txtIsConnect.TabIndex = 36;
+            this.txtIsConnect.TabStop = false;
+            this.txtIsConnect.Text = "Not Connected";
+            this.txtIsConnect.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 17F);
@@ -616,6 +633,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Digital Scale";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel2.ResumeLayout(false);
@@ -664,7 +682,6 @@
         private System.Windows.Forms.Label lblTime;
         private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.Timer timer2;
-        private System.Windows.Forms.TextBox txtIsConnect;
         private System.Windows.Forms.Button btnPrint;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
@@ -681,6 +698,8 @@
         private System.Windows.Forms.Label lblScanStatus;
         private System.Windows.Forms.TextBox txtSDT;
         private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txtIsConnect;
     }
 }
 

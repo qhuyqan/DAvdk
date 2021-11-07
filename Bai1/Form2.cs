@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.OleDb;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -14,14 +13,14 @@ namespace Bai1
 {
     public partial class Form2 : Form
     {
-        string strCon = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=Database1.mdb";
-        OleDbConnection sqlCon = null;
+        string strCon = @"Data Source=QUANGHUY;Initial Catalog=QuanLyBanHang;Persist Security Info=True;User ID=sa;Password=quanghuy21";
+        SqlConnection sqlCon = null;
         // Open
         public void OpenConnection()
         {
             if (sqlCon == null)
             {
-                sqlCon = new OleDbConnection(strCon);
+                sqlCon = new SqlConnection(strCon);
             }
             if (sqlCon.State == ConnectionState.Closed)
             {
@@ -45,15 +44,15 @@ namespace Bai1
             try
             {
                 OpenConnection();
-                OleDbCommand sqlCmd = new OleDbCommand();
+                SqlCommand sqlCmd = new SqlCommand();
                 sqlCmd.CommandType = CommandType.Text;
                 sqlCmd.CommandText = "SELECT * FROM DanhSachNhanVien WHERE Tk='" + txtTaiKhoan.Text + "' and Mk='" + txtMatKhau.Text + "'";
                 sqlCmd.Connection = sqlCon;
-                OleDbDataReader reader = sqlCmd.ExecuteReader();
+                SqlDataReader reader = sqlCmd.ExecuteReader();
 
                 if (reader.Read() == true)
                 {
-                    MessageBox.Show("LOGIN SUCCESSFUL!");
+                    //MessageBox.Show("LOGIN SUCCESSFUL!");
                     txtTaiKhoan.Text = "";
                     txtMatKhau.Text = "";
                     txtTaiKhoan.Focus();
@@ -137,6 +136,11 @@ namespace Bai1
         private void Form2_Load(object sender, EventArgs e)
         {
             
+        }
+
+        private void txtMatKhau_TextChanged(object sender, EventArgs e)
+        {
+
         }       
     }
 }

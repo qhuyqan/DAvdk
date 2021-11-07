@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bai1", "Bai1\Bai1.csproj", "{90AC1C08-033D-4224-A8F7-5A7A76A06534}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CanDienTu", "Bai1\CanDienTu.csproj", "{90AC1C08-033D-4224-A8F7-5A7A76A06534}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

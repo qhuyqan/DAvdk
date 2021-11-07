@@ -398,10 +398,10 @@
     <Height>1.36333in</Height>
     <Style />
   </Body>
-  <Width>6.81666in</Width>
+  <Width>6.92812in</Width>
   <Page>
     <PageHeader>
-      <Height>5.1435cm</Height>
+      <Height>5.40397cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -528,7 +528,7 @@
           </Paragraphs>
           <rd:DefaultName>Textbox2</rd:DefaultName>
           <Top>2.0447cm</Top>
-          <Left>9.1567cm</Left>
+          <Left>10.17503cm</Left>
           <Height>0.76933cm</Height>
           <Width>1.65333cm</Width>
           <ZIndex>3</ZIndex>
@@ -627,7 +627,7 @@
           </Paragraphs>
           <rd:DefaultName>pOrderDate</rd:DefaultName>
           <Top>2.0447cm</Top>
-          <Left>11.3157cm</Left>
+          <Left>12.33403cm</Left>
           <Height>0.76933cm</Height>
           <Width>4.09216cm</Width>
           <ZIndex>6</ZIndex>
@@ -694,9 +694,9 @@
           </Paragraphs>
           <rd:DefaultName>pPhone</rd:DefaultName>
           <Top>3.93614cm</Top>
-          <Left>3.90737cm</Left>
+          <Left>3.8227cm</Left>
           <Height>0.76933cm</Height>
-          <Width>5.07294cm</Width>
+          <Width>5.15761cm</Width>
           <ZIndex>8</ZIndex>
           <Style>
             <Border>
@@ -776,7 +776,7 @@
           <rd:DefaultName>Textbox16</rd:DefaultName>
           <Top>0.44449cm</Top>
           <Left>9.1567cm</Left>
-          <Height>0.6cm</Height>
+          <Height>0.9175cm</Height>
           <Width>2.3495cm</Width>
           <ZIndex>1</ZIndex>
           <Style>
@@ -809,8 +809,8 @@
           <rd:DefaultName>Textbox18</rd:DefaultName>
           <Top>0.44449cm</Top>
           <Left>12.33403cm</Left>
-          <Height>0.6cm</Height>
-          <Width>2.5cm</Width>
+          <Height>0.9175cm</Height>
+          <Width>4.79772cm</Width>
           <ZIndex>2</ZIndex>
           <Style>
             <Border>
@@ -830,7 +830,7 @@
       </Style>
     </PageFooter>
     <PageHeight>29.7cm</PageHeight>
-    <PageWidth>15cm</PageWidth>
+    <PageWidth>21cm</PageWidth>
     <LeftMargin>2cm</LeftMargin>
     <RightMargin>2cm</RightMargin>
     <TopMargin>2cm</TopMargin>

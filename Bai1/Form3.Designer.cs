@@ -147,12 +147,12 @@
             // 
             this.btnDangKy.BackColor = System.Drawing.Color.Transparent;
             this.btnDangKy.Font = new System.Drawing.Font("Montserrat", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDangKy.Location = new System.Drawing.Point(190, 421);
+            this.btnDangKy.Location = new System.Drawing.Point(151, 423);
             this.btnDangKy.Margin = new System.Windows.Forms.Padding(4);
             this.btnDangKy.Name = "btnDangKy";
-            this.btnDangKy.Size = new System.Drawing.Size(224, 61);
+            this.btnDangKy.Size = new System.Drawing.Size(324, 67);
             this.btnDangKy.TabIndex = 6;
-            this.btnDangKy.Text = "REGISTER";
+            this.btnDangKy.Text = "REGISTER NOW";
             this.btnDangKy.UseVisualStyleBackColor = false;
             this.btnDangKy.Click += new System.EventHandler(this.btnDangKy_Click);
             // 
