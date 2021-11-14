@@ -73,7 +73,7 @@
             this.btnSignUp.BackColor = System.Drawing.Color.Transparent;
             this.btnSignUp.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnSignUp.Font = new System.Drawing.Font("UTM Flamenco", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSignUp.Location = new System.Drawing.Point(35, 496);
+            this.btnSignUp.Location = new System.Drawing.Point(12, 531);
             this.btnSignUp.Name = "btnSignUp";
             this.btnSignUp.Size = new System.Drawing.Size(187, 41);
             this.btnSignUp.TabIndex = 8;

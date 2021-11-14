@@ -35,10 +35,14 @@ namespace Bai1
         // Close
         public void CloseConnection()
         {
-            if (sqlCon.State == ConnectionState.Open && sqlCon != null)
+            try
             {
-                sqlCon.Close();
+                if (sqlCon.State == ConnectionState.Open && sqlCon != null)
+                {
+                    sqlCon.Close();
+                }
             }
+            catch { }
         }
         public Form1()
         {
@@ -109,7 +113,7 @@ namespace Bai1
             btnDis.Enabled = false;
             btnScan.Enabled = false;
             btnNew.Enabled = false;
-            Camera = new Capture(0);
+            Camera = new Capture(1);
             Camera.ImageGrabbed += Camera_ImageGrabbed;
             Camera.Start();
 
@@ -144,7 +148,7 @@ namespace Bai1
                         string tenSP = reader.GetString(1);
                         int donGia = reader.GetInt32(2);
                         //string khoiLuong = serialPort1.ReadExisting();
-                        double thanhTien = donGia * 0.6851;//float.Parse(khoiLuong);
+                        double thanhTien = Math.Round(donGia * float.Parse(txtKhoiLuong.Text),1);
 
                         // Show 
                         txtTenSanPham.Text = tenSP;
@@ -156,7 +160,7 @@ namespace Bai1
                     //timer1.Stop();
                     tongTien = tongTien + double.Parse(txtThanhTien.Text);
                     txtTongTien.Text = tongTien.ToString();
-                    Thread.Sleep(3000);
+                    Thread.Sleep(1000);
                 }
                 catch (Exception ex)
                 {
@@ -221,7 +225,8 @@ namespace Bai1
         private void serialPort1_DataReceived(object sender, System.IO.Ports.SerialDataReceivedEventArgs e)
         {
             string weight = serialPort1.ReadExisting();
-            Invoke(new MethodInvoker(() => txtKhoiLuong.Text = weight));
+            float weight_to_number = float.Parse(weight) / 1000;
+            Invoke(new MethodInvoker(() => txtKhoiLuong.Text = weight_to_number.ToString()));
         }
 
         private void btnPrint_Click(object sender, EventArgs e)
@@ -232,17 +237,24 @@ namespace Bai1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //------------------Them vao Orders-------------------//
-            OpenConnection();
-            SqlCommand sqlCmd = new SqlCommand();
-            sqlCmd.CommandType = CommandType.Text;
-            sqlCmd.CommandText = "INSERT INTO Orders(CustomerName,Phone,OrderDate)" +
-                                 " VALUES (N'" + txtKhachHang.Text + "','" + txtSDT.Text + "','" + lblDate.Text + " " + lblTime.Text + "')";         
-            sqlCmd.Connection = sqlCon;
-            int result = sqlCmd.ExecuteNonQuery();
-            if (result > 0)
+            if (txtKhachHang.Text != "")
             {
-                CloseConnection();
+                //------------------Them vao Orders-------------------//
+                OpenConnection();
+                SqlCommand sqlCmd = new SqlCommand();
+                sqlCmd.CommandType = CommandType.Text;
+                sqlCmd.CommandText = "INSERT INTO Orders(CustomerName,Phone,OrderDate)" +
+                                     " VALUES (N'" + txtKhachHang.Text + "','" + txtSDT.Text + "','" + lblDate.Text + " " + lblTime.Text + "')";
+                sqlCmd.Connection = sqlCon;
+                int result = sqlCmd.ExecuteNonQuery();
+                if (result > 0)
+                {
+                    CloseConnection();
+                }
+            }
+            else
+            {
+                MessageBox.Show("PLEASE ENTER CUSTOMER'S NAME!");
             }
         }
     }

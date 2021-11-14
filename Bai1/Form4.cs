@@ -19,8 +19,7 @@ namespace Bai1
         {
             InitializeComponent();
         }
-
-        private void btnLoad_Click(object sender, EventArgs e)
+        private void Form4_Load(object sender, EventArgs e)
         {
             using (IDbConnection db = new SqlConnection(ConfigurationManager.ConnectionStrings["Bai1.Properties.Settings.Database1ConnectionString"].ConnectionString))
             {
@@ -34,6 +33,10 @@ namespace Bai1
 
             try { dataGridView1.Sort(dataGridView1.Columns["OrderID"], ListSortDirection.Ascending); }
             catch { }
+        }
+        private void btnLoad_Click(object sender, EventArgs e)
+        {
+            
 
         }
 
@@ -56,8 +59,6 @@ namespace Bai1
             }
         }
 
-        private void Form4_Load(object sender, EventArgs e)
-        {
-        }
+        
     }
 }
