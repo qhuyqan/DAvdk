@@ -40,6 +40,7 @@
             this.btnScan = new System.Windows.Forms.Button();
             this.btnCon = new System.Windows.Forms.Button();
             this.btnEsc = new System.Windows.Forms.Button();
+            this.btnClear = new System.Windows.Forms.Button();
             this.btnDis = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -53,7 +54,6 @@
             this.txtTenSanPham = new System.Windows.Forms.TextBox();
             this.txtKhoiLuong = new System.Windows.Forms.TextBox();
             this.txtDonGia = new System.Windows.Forms.TextBox();
-            this.btnClear = new System.Windows.Forms.Button();
             this.txtThanhTien = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -78,6 +78,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picCam)).BeginInit();
@@ -211,6 +212,18 @@
             this.btnEsc.UseVisualStyleBackColor = false;
             this.btnEsc.Click += new System.EventHandler(this.btnEsc_Click);
             // 
+            // btnClear
+            // 
+            this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClear.Font = new System.Drawing.Font("Montserrat", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.Location = new System.Drawing.Point(34, 538);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(198, 79);
+            this.btnClear.TabIndex = 16;
+            this.btnClear.Text = "DONE";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
             // btnDis
             // 
             this.btnDis.BackColor = System.Drawing.SystemColors.ActiveCaption;
@@ -341,18 +354,6 @@
             this.txtDonGia.Size = new System.Drawing.Size(289, 38);
             this.txtDonGia.TabIndex = 6;
             // 
-            // btnClear
-            // 
-            this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClear.Font = new System.Drawing.Font("Montserrat", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.Location = new System.Drawing.Point(34, 538);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(198, 79);
-            this.btnClear.TabIndex = 16;
-            this.btnClear.Text = "DONE";
-            this.btnClear.UseVisualStyleBackColor = true;
-            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
-            // 
             // txtThanhTien
             // 
             this.txtThanhTien.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -375,6 +376,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.panel1.Controls.Add(this.label20);
             this.panel1.Controls.Add(this.txtSDT);
             this.panel1.Controls.Add(this.label19);
             this.panel1.Controls.Add(this.btnPrint);
@@ -528,7 +530,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 33);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1206, 701);
+            this.tabPage2.Size = new System.Drawing.Size(1265, 701);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Infomation";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -623,6 +625,16 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "NHÓM 13";
             // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Montserrat", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(536, 286);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(49, 35);
+            this.label20.TabIndex = 35;
+            this.label20.Text = "Kg";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 17F);
@@ -701,6 +713,7 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox txtIsConnect;
+        private System.Windows.Forms.Label label20;
     }
 }
 
